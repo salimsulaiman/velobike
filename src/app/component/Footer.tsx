@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { ImLinkedin } from "react-icons/im";
 
 function Footer() {
   return (
