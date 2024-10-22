@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Link from "next/link";
@@ -9,6 +9,41 @@ import { ImPriceTags } from "react-icons/im";
 import { FaStar } from "react-icons/fa";
 
 function Home() {
+  const [currentItem, setCurrentItem] = useState(0); // State to track active carousel item
+
+  const carouselItems = [
+    {
+      id: 1,
+      name: "Nurul Ismawati",
+      image:
+        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=NFHhATmmJGYQ7kNvgEtQwki&_nc_gid=c943e0447a4941f69b1df345d49987a6&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDCz6Pwrzbeu8sV2CjTwk6KKVt3RzSleBOD07_j9zV8bw&oe=6713A3D0&_nc_sid=7d3ac5",
+      rating: 5,
+      review: "Produk sangat bagus, build quality sangat kokoh. sangat recomended",
+    },
+    {
+      id: 2,
+      name: "Salim Sulaiman",
+      image:
+        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.29350-15/281604555_384921943580847_8615178406469412152_n.webp?stp=dst-jpg_e35_p480x480&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=W9lZETFMjVEQ7kNvgFeCzjh&_nc_gid=fe7090699e9d471eaecee0f526094343&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=Mjg0MjI4MjI5ODQxOTE3OTk1MA%3D%3D.3-ccb7-5&oh=00_AYDF5Opd2NmEL5LZQ6w53UXwFW6ILFRXwnlCpmKfnHySgg&oe=670FFDA4&_nc_sid=7a9f4b",
+      rating: 4,
+      review: "Sangat mantap, secara keseluruhan saya sangat suka dengan produk yang dihadirkan",
+    },
+    // Add more items as needed
+  ];
+
+  const handleButtonClick = (index: number) => {
+    setCurrentItem(index); // Update the current carousel item when a button is clicked
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentItem((prevItem) => (prevItem + 1) % carouselItems.length); // Loop back to the first item
+    }, 6000); // 3 seconds
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  }, [carouselItems.length, currentItem]);
+
   useEffect(() => {
     // Initialize AOS
     AOS.init({
@@ -16,8 +51,8 @@ function Home() {
     });
   }, []);
   return (
-    <div className="w-full">
-      <div className="bg-alabaster-50 h-[677px] w-full pt-[165px]">
+    <div className="w-full relative">
+      <div className="bg-alabaster-50 h-[750px] w-full pt-[165px] relative">
         <div className="max-w-screen-xlg mx-auto flex">
           <div className="w-3/12" data-aos="fade-right">
             <h4 className="text-slate-800 mb-3">Road Bike</h4>
@@ -42,16 +77,24 @@ function Home() {
               alt="santacruz"
               width={1000}
               height={1000}
-              className="w-[827px] h-auto -left-8 -top-4 absolute"
+              className="w-[827px] h-auto -left-8 -top-4 absolute z-10"
               data-aos="fade-left"
               quality={100}
               priority
             />
           </div>
         </div>
+        <Image
+          src={"/assets/grey-svg.svg"}
+          alt="grey-svg"
+          width={1000}
+          height={1000}
+          quality={100}
+          className="absolute -left-1 bottom-0 -right-1 w-full m-0"
+        />
       </div>
       <div className="bg-white w-full">
-        <div className="max-w-screen-xlg min-h-[971px] mx-auto pt-[145px] pb-12">
+        <div className="max-w-screen-xlg min-h-[971px] mx-auto pt-[145px] pb-12 relative">
           <h4 className="text-xl text-curious-blue-600 font-bold uppercase">Your Ride Start Here</h4>
           <h3 className="text-[32px] text-slate-800 mb-[74px]">Our Facilities & Features</h3>
           <div className="grid grid-cols-3 gap-8">
@@ -361,85 +404,99 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full bg-curious-blue-600 relative overflow-hidden">
-        <Image
-          src={"/assets/white-svg.svg"}
-          alt="white-svg"
-          width={1000}
-          height={1000}
-          quality={100}
-          className="absolute left-0 top-0 right-0 w-full z-10"
-        />
-        <div className="max-w-screen-xlg mx-auto min-h-[573px] relative flex flex-col justify-center">
+      <div className="w-full bg-white">
+        <div className="max-w-screen-2xl mx-auto bg-curious-blue-600 relative overflow-hidden">
           <Image
-            src={"/assets/abstract-square.png"}
-            alt="abstract-square"
+            src={"/assets/white-svg.svg"}
+            alt="white-svg"
             width={1000}
             height={1000}
             quality={100}
-            className="absolute -right-[150px] w-[955px]"
+            className="absolute -left-1 top-0 right-1 w-full z-10 m-0 border-none"
           />
-          <Image
-            src={"/assets/abstract-skew.png"}
-            alt="abstract-skew"
-            width={1000}
-            height={1000}
-            quality={100}
-            className="absolute left-[21px] w-[729px]"
-          />
-          <Image
-            src={"/assets/abstract-arrow.png"}
-            alt="abstract-arrow"
-            width={1000}
-            height={1000}
-            quality={100}
-            className="absolute top-1/2 -translate-y-1/3 w-[266px] -left-[133px]"
-          />
-          <Image
-            src={"/assets/product/FELT-fixie.png"}
-            alt="abstract-arrow"
-            width={3000}
-            height={3000}
-            quality={100}
-            className="absolute w-[1697px] -right-[900px] -top-[25px] scale-x-[-1] max-w-none"
-          />
-          <h4 className="text-xl text-white font-bold uppercase z-20 mt-20">Custumer Experience</h4>
-          <h3 className="text-[32px] text-white mb-[33px] z-20">What Our Customer Say</h3>
-          <div className="max-w-[393px] z-20">
-            <div className="flex gap-[18px]">
-              <div className="w-[58px] h-[58px] bg-slate-800 rounded-full overflow-hidden">
-                <Image
-                  src={
-                    "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=NFHhATmmJGYQ7kNvgEtQwki&_nc_gid=c943e0447a4941f69b1df345d49987a6&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDCz6Pwrzbeu8sV2CjTwk6KKVt3RzSleBOD07_j9zV8bw&oe=6713A3D0&_nc_sid=7d3ac5"
-                  }
-                  alt="profile"
-                  className="w-full h-full object-cover object-center"
-                  width={500}
-                  height={500}
-                />
+          <div className="max-w-screen-xlg mx-auto min-h-[573px] relative flex flex-col justify-center">
+            <Image
+              src={"/assets/abstract-square.png"}
+              alt="abstract-square"
+              width={1000}
+              height={1000}
+              quality={100}
+              className="absolute -right-[150px] w-[955px]"
+            />
+            <Image
+              src={"/assets/abstract-skew.png"}
+              alt="abstract-skew"
+              width={1000}
+              height={1000}
+              quality={100}
+              className="absolute left-[21px] w-[729px]"
+            />
+            <Image
+              src={"/assets/abstract-arrow.png"}
+              alt="abstract-arrow"
+              width={1000}
+              height={1000}
+              quality={100}
+              className="absolute top-1/2 -translate-y-1/3 w-[266px] -left-[133px]"
+            />
+            <Image
+              src={"/assets/product/FELT-fixie.png"}
+              alt="abstract-arrow"
+              width={3000}
+              height={3000}
+              quality={100}
+              className="absolute w-[1697px] -right-[900px] -top-[25px] scale-x-[-1] max-w-none"
+            />
+            <h4 className="text-xl text-white font-bold uppercase z-20 mt-20">Custumer Experience</h4>
+            <h3 className="text-[32px] text-white mb-[33px] z-20">What Our Customer Say</h3>
+            <div className="max-w-[393px] z-20">
+              <div className="carousel w-full">
+                {carouselItems.map((item, index) => (
+                  <div
+                    key={item.id}
+                    className={`carousel-item w-full flex flex-col transition-opacity duration-1000 ease-in-out transform ${
+                      currentItem === index ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full absolute"
+                    }`}
+                  >
+                    <div className="w-full flex gap-[18px]">
+                      <div className="w-[58px] h-[58px] bg-slate-800 rounded-full overflow-hidden">
+                        <Image
+                          src={item?.image}
+                          alt="profile"
+                          className="w-full h-full object-cover object-center"
+                          width={500}
+                          height={500}
+                        />
+                      </div>
+                      <div className="flex flex-col justify-between h-fit">
+                        <h4 className="text-white font-medium">{item?.name}</h4>
+                        <div className="flex gap-[3px] mt-[8px]">
+                          {[...Array(5)].map((_, i) => (
+                            <FaStar
+                              key={i}
+                              className={`text-2xl ${i < item.rating ? "text-sunflower-500" : "text-slate-100"}`}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="w-full">
+                      <h4 className="text-white mt-[25px]">{item.review}</h4>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="flex flex-col justify-between h-full">
-                <h4 className="text-white font-medium">Nurul Ismawati</h4>
-                <div className="flex gap-[3px] mt-[8px]">
-                  <FaStar className="text-sunflower-500 text-2xl" />
-                  <FaStar className="text-sunflower-500 text-2xl" />
-                  <FaStar className="text-sunflower-500 text-2xl" />
-                  <FaStar className="text-sunflower-500 text-2xl" />
-                  <FaStar className="text-sunflower-500 text-2xl" />
-                  <FaStar className="text-sunflower-500 text-2xl" />
-                </div>
+              <div className="w-full flex gap-[6px] mt-[11px]" id="pagination">
+                {carouselItems.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`h-[6px] ${currentItem === index ? "w-[43px]" : "w-[24px]"} bg-${
+                      currentItem === index ? "silver-chalice-400" : "white"
+                    } rounded-full transition-all duration-500 ease-in-out`}
+                    onClick={() => handleButtonClick(index)}
+                  ></button>
+                ))}
               </div>
-            </div>
-            <div className="w-full">
-              <h4 className="text-white mt-[25px]">
-                Produk sangat bagus, build quality sangat kokoh. sangat recomended
-              </h4>
-            </div>
-            <div className="w-full flex gap-[6px] mt-[11px]">
-              <div className="h-[6px] w-[43px] bg-silver-chalice-400 rounded-full"></div>
-              <div className="h-[6px] w-[24px] bg-white rounded-full"></div>
-              <div className="h-[6px] w-[24px] bg-white rounded-full"></div>
-              <div className="h-[6px] w-[24px] bg-white rounded-full"></div>
             </div>
           </div>
         </div>
