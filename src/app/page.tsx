@@ -28,6 +28,14 @@ function Home() {
       rating: 4,
       review: "Sangat mantap, secara keseluruhan saya sangat suka dengan produk yang dihadirkan",
     },
+    {
+      id: 3,
+      name: "Samy Sulaiman",
+      image:
+        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/277318708_497873051955434_5811658738444759823_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=CsY3LRy0HUMQ7kNvgGPx39W&_nc_gid=2017a2cadc794fc3863e79b49cce7312&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYBhd1TD0gIOZnWH9fZkfeoJ2FT6jvTygesG8i8HhGBUKA&oe=671E380F&_nc_sid=7a9f4b",
+      rating: 5,
+      review: "Keren banget, kualitas gk main main ini",
+    },
     // Add more items as needed
   ];
 
@@ -449,7 +457,7 @@ function Home() {
             />
             <h4 className="text-xl text-white font-bold uppercase z-20 mt-20">Custumer Experience</h4>
             <h3 className="text-[32px] text-white mb-[33px] z-20">What Our Customer Say</h3>
-            <div className="max-w-[393px] z-20">
+            <div className="max-w-[393px] z-20 flex flex-col min-h-[150px] justify-between">
               <div className="carousel w-full">
                 {carouselItems.map((item, index) => (
                   <div
@@ -490,8 +498,8 @@ function Home() {
                 {carouselItems.map((_, index) => (
                   <button
                     key={index}
-                    className={`h-[6px] ${currentItem === index ? "w-[43px]" : "w-[24px]"} bg-${
-                      currentItem === index ? "silver-chalice-400" : "white"
+                    className={`h-[6px] ${
+                      currentItem === index ? "w-[43px] bg-silver-chalice-400" : "w-[24px] bg-white"
                     } rounded-full transition-all duration-500 ease-in-out`}
                     onClick={() => handleButtonClick(index)}
                   ></button>
