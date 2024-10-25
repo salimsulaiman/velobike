@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);
+
+  const pathname = usePathname();
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -40,27 +43,52 @@ function Navbar() {
       >
         <ul className="flex gap-[10px]">
           <li>
-            <Link className="bg-curious-blue-600 text-white rounded-full px-[25px] py-[14px] inline-block" href={"/"}>
+            <Link
+              className={`${
+                pathname === "/" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+              } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block`}
+              href={"/"}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link className="bg-porcelain-100 text-slate-800 rounded-full px-[25px] py-[14px] inline-block" href={"/"}>
+            <Link
+              className={`${
+                pathname === "/collection" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+              } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block`}
+              href={"/collection"}
+            >
               Collection
             </Link>
           </li>
           <li>
-            <Link className="bg-porcelain-100 text-slate-800 rounded-full px-[25px] py-[14px] inline-block" href={"/"}>
+            <Link
+              className={`${
+                pathname === "/sale" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+              } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block`}
+              href={"/"}
+            >
               Sale
             </Link>
           </li>
           <li>
-            <Link className="bg-porcelain-100 text-slate-800 rounded-full px-[25px] py-[14px] inline-block" href={"/"}>
+            <Link
+              className={`${
+                pathname === "/articles" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+              } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block`}
+              href={"/"}
+            >
               Articles
             </Link>
           </li>
           <li>
-            <Link className="bg-porcelain-100 text-slate-800 rounded-full px-[25px] py-[14px] inline-block" href={"/"}>
+            <Link
+              className={`${
+                pathname === "/support" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+              } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block`}
+              href={"/"}
+            >
               Support
             </Link>
           </li>
