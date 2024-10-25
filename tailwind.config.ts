@@ -24,6 +24,8 @@ const config: Config = {
         "sunflower-500": "#E8D212",
         "woodsmoke-950": "#191919",
         "silver-chalice-400": "#AFAFAF",
+        "black-haze-100": "#F1F3F1",
+        "black-haze-200": "#d9ded9",
       },
       backgroundImage: {
         footer: "url('/assets/footer-background.png')",
