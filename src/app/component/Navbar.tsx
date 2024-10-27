@@ -55,7 +55,7 @@ function Navbar() {
           <li>
             <Link
               className={`${
-                pathname === "/collection" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+                pathname.includes("/collection") ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
               } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block`}
               href={"/collection"}
             >

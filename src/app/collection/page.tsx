@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import AccessoriesCard from "../component/AccessoriesCard";
+import ProductCard from "../component/ProductCard";
 
 function Collection() {
   const [currentItem, setCurrentItem] = useState(0);
@@ -49,7 +50,7 @@ function Collection() {
   }, [carouselItems.length, currentItem]);
   return (
     <div className="w-full bg-white">
-      <div className="max-w-screen-xlg mx-auto pt-[181px] pb-6">
+      <div className="max-w-screen-xlg mx-auto pt-[150px] pb-6">
         <div className="w-full h-[326px] bg-curious-blue-600 rounded-[10px] flex justify-between items-center relative">
           <Image
             src={"/assets/sparkle.png"}
@@ -132,174 +133,14 @@ function Collection() {
           <h3 className="text-[32px] text-slate-800 mb-[35px]">Our Sepcial Bikes</h3>
           <div className="w-full grid grid-cols-4 gap-[32px] relative z-10">
             {/* product */}
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
             {/* end product */}
           </div>
         </div>
