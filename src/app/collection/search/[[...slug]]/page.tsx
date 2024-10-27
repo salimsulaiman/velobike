@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
-import AccessoriesCard from "../component/AccessoriesCard";
-import ProductCard from "../component/ProductCard";
+import AccessoriesCard from "../../../component/AccessoriesCard";
+import ProductCard from "@/app/component/ProductCard";
 
-function Collection() {
+function Detail() {
   const [currentItem, setCurrentItem] = useState(0);
   const carouselItems = [
     {
@@ -50,49 +50,7 @@ function Collection() {
   }, [carouselItems.length, currentItem]);
   return (
     <div className="w-full bg-white">
-      <div className="max-w-screen-xlg mx-auto pt-[150px] pb-6">
-        <div className="w-full h-[326px] bg-curious-blue-600 rounded-[10px] flex justify-between items-center relative">
-          <Image
-            src={"/assets/sparkle.png"}
-            alt="sparkle"
-            width={1000}
-            height={1000}
-            quality={100}
-            className="w-[694px] top-[21px] -left-[22px] absolute"
-          />
-          <div className="w-1/2 px-[64px]">
-            <div className="w-full">
-              <h1 className="text-white font-bold text-[40px]">Grab Upto 40% Off On Selected Bikes</h1>
-              <Link
-                href={"/"}
-                className="bg-white hover:bg-slate-100 text-woodsmoke-950 inline-block px-[32px] py-[10px] rounded-full mt-[17px]"
-              >
-                Shop Now
-              </Link>
-            </div>
-          </div>
-          <div className="w-1/2 h-full relative overflow-hidden">
-            <Image
-              src={"/assets/promo/man-riding.png"}
-              alt="man-riding"
-              width={1000}
-              height={1000}
-              quality={100}
-              className="absolute w-full h-full"
-            />
-          </div>
-          <div className="w-full absolute bottom-[38px] flex gap-[6px] items-center justify-center">
-            {carouselItems.map((_, index) => (
-              <button
-                key={index}
-                className={`h-[6px] ${
-                  currentItem === index ? "w-[43px] bg-silver-chalice-400" : "w-[24px] bg-white"
-                } rounded-full transition-all duration-500 ease-in-out`}
-                onClick={() => handleButtonClick(index)}
-              ></button>
-            ))}
-          </div>
-        </div>
+      <div className="max-w-screen-xlg mx-auto pt-[120px] pb-6">
         {/* product */}
         <div className="w-full py-6">
           <div className="flex gap-[11px]">
@@ -127,10 +85,8 @@ function Collection() {
               </span>
             </button>
           </div>
-          <h4 className="text-xl text-curious-blue-600 font-bold uppercase relative z-10 mt-[32px]">
-            Choose Your Bikes
-          </h4>
-          <h3 className="text-[32px] text-slate-800 mb-[35px]">Our Sepcial Bikes</h3>
+          <h4 className="text-xl text-curious-blue-600 font-bold relative z-10 mt-[32px]">Result</h4>
+          <h3 className="text-[32px] text-slate-800 mb-[35px]">RoadBike</h3>
           <div className="w-full grid grid-cols-4 gap-[32px] relative z-10">
             {/* product */}
             <ProductCard />
@@ -144,56 +100,14 @@ function Collection() {
             {/* end product */}
           </div>
         </div>
-        <div className="w-full flex gap-2 justify-center">
+        <div className="w-full flex gap-2 justify-center mb-6">
           <button className="rounded-full w-[18px] h-[18px] bg-slate-800"></button>
           <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
           <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
-        </div>
-      </div>
-      <div className="max-w-screen-2xl mx-auto bg-curious-blue-600 py-6 overflow-hidden relative">
-        <Image
-          src={"/assets/white-svg.svg"}
-          alt="white-svg"
-          width={1000}
-          height={1000}
-          quality={100}
-          className="top-0 w-full z-10 relative -mt-6 border-none"
-          style={{ transform: "scaleX(-1)" }}
-        />
-        <div className="max-w-screen-xlg mx-auto relative">
-          <Image
-            src={"/assets/abstract-square-v2.png"}
-            alt="abstract-square-v2"
-            width={1000}
-            height={1000}
-            quality={100}
-            className="absolute -top-36 -right-[350px] w-[1265px]"
-          />
-          <Image
-            src={"/assets/abstract-arrow.png"}
-            alt="abstract-arrow"
-            width={1000}
-            height={1000}
-            quality={100}
-            className="absolute top-1/2 -translate-y-1/3 w-[266px] -left-[100px]"
-          />
-          <h4 className="text-xl text-white font-bold uppercase relative z-10 mt-[32px]">Accessories</h4>
-          <h3 className="text-[32px] text-white mb-[35px]">Extend Your Style</h3>
-          <div className="w-full grid grid-cols-4 gap-[31px] justify-between mt-[43px]">
-            <AccessoriesCard />
-            <AccessoriesCard />
-            <AccessoriesCard />
-            <AccessoriesCard />
-          </div>
-          <div className="w-full flex gap-2 justify-center my-14">
-            <button className="rounded-full w-[18px] h-[18px] bg-slate-800"></button>
-            <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
-            <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
-          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Collection;
+export default Detail;

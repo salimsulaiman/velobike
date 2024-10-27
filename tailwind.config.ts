@@ -26,6 +26,8 @@ const config: Config = {
         "silver-chalice-400": "#AFAFAF",
         "black-haze-100": "#F1F3F1",
         "black-haze-200": "#d9ded9",
+        "seashell-100": "#F1F1F1",
+        "bombay-400": "#ACB1B9",
       },
       backgroundImage: {
         footer: "url('/assets/footer-background.png')",
