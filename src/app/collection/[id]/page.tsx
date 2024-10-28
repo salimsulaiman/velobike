@@ -120,12 +120,54 @@ function Detail() {
             <select
               name=""
               id=""
-              className="flex px-[13px] py-[5px] rounded-[10px] border-2 border-bombay-400 mt-[36px] mb-3"
+              className="flex px-[13px] py-[5px] rounded-[10px] border-2 border-bombay-400 mt-[36px] mb-3 bg-white"
             >
               <option value="Newest">Newest</option>
               <option value="Oldest">Oldest</option>
             </select>
-            <CommentCard />
+            <CommentCard
+              id={1}
+              account={{
+                name: "Nurul Ismawati",
+                picture:
+                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=F7jS2tLCeCIQ7kNvgFMadFb&_nc_gid=fe16eb56cd2d4d79abb90d43f7ee7d43&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAWAxer2rpuvQmmroF-l8Hg2DN25x0gmlvLOCdslCWPOw&oe=67257010&_nc_sid=7d3ac5",
+              }}
+              rating={5}
+              date={new Date("2024-10-28")}
+              primary={true}
+              comment={"Produk sangat bagus, build quality sangat kokoh, sangat recomended"}
+              like={1}
+              dislike={0}
+            />
+            <CommentCard
+              id={1}
+              account={{
+                name: "Salim Sulaiman",
+                picture:
+                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
+              }}
+              rating={3}
+              date={new Date("2024-10-27")}
+              primary={true}
+              comment={"Sayang banget untuk warna merah jarang ready stock"}
+              like={0}
+              dislike={2}
+            />
+            <CommentCard
+              id={2}
+              account={{
+                name: "Samy Sulaiman",
+                picture:
+                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/277318708_497873051955434_5811658738444759823_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=7O-VvV1wr3EQ7kNvgH8vWnp&_nc_gid=479686402b464408961e4fdd620a1ef1&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBFggCPQ3OAe2MYfo186duPcPXzXa2t0CbuH5MMo3Pxxg&oe=6725784F&_nc_sid=7d3ac5",
+              }}
+              rating={4}
+              date={new Date("2024-10-04")}
+              primary={false}
+              comment={"Nyaman banget buat dipakai"}
+              parentId={1}
+              like={5}
+              dislike={0}
+            />
           </div>
           <div className="w-2/5"></div>
         </div>
