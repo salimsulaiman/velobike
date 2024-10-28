@@ -37,7 +37,7 @@ function CommentCard({ account, rating, date, primary, comment, parentId, like, 
 
   const formattedDate = formatDate(date);
   return (
-    <div className="w-full">
+    <div className="w-full" key={parentId}>
       <div className="w-full flex flex-row gap-[19px] py-4">
         <div className="h-[40px] w-[40px] rounded-full relative overflow-hidden">
           <ProgressiveImage
