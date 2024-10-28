@@ -16,7 +16,7 @@ function Home() {
       id: 1,
       name: "Nurul Ismawati",
       image:
-        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=NFHhATmmJGYQ7kNvgEtQwki&_nc_gid=c943e0447a4941f69b1df345d49987a6&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDCz6Pwrzbeu8sV2CjTwk6KKVt3RzSleBOD07_j9zV8bw&oe=6713A3D0&_nc_sid=7d3ac5",
+        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
       rating: 5,
       review: "Produk sangat bagus, build quality sangat kokoh. sangat recomended",
     },
@@ -24,7 +24,7 @@ function Home() {
       id: 2,
       name: "Salim Sulaiman",
       image:
-        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.29350-15/281604555_384921943580847_8615178406469412152_n.webp?stp=dst-jpg_e35_p480x480&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDEzNTAuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlIn0&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=W9lZETFMjVEQ7kNvgFeCzjh&_nc_gid=fe7090699e9d471eaecee0f526094343&edm=AP4sbd4BAAAA&ccb=7-5&ig_cache_key=Mjg0MjI4MjI5ODQxOTE3OTk1MA%3D%3D.3-ccb7-5&oh=00_AYDF5Opd2NmEL5LZQ6w53UXwFW6ILFRXwnlCpmKfnHySgg&oe=670FFDA4&_nc_sid=7a9f4b",
+        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
       rating: 4,
       review: "Sangat mantap, secara keseluruhan saya sangat suka dengan produk yang dihadirkan",
     },
@@ -32,7 +32,7 @@ function Home() {
       id: 3,
       name: "Samy Sulaiman",
       image:
-        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/277318708_497873051955434_5811658738444759823_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=CsY3LRy0HUMQ7kNvgGPx39W&_nc_gid=2017a2cadc794fc3863e79b49cce7312&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AYBhd1TD0gIOZnWH9fZkfeoJ2FT6jvTygesG8i8HhGBUKA&oe=671E380F&_nc_sid=7a9f4b",
+        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
       rating: 5,
       review: "Keren banget, kualitas gk main main ini",
     },
