@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,6 +14,7 @@ import ProgressiveImage from "@/app/component/ProgressiveImage";
 import CommentCard from "@/app/component/CommentCard";
 
 function Detail() {
+  const [activeSection, setActiveSection] = useState("details");
   return (
     <div className="w-full bg-white">
       <div className="w-full bg-alabaster-50">
@@ -112,64 +113,134 @@ function Detail() {
 
       <div className="max-w-screen-xlg mx-auto relative bg-white">
         <div className="w-full flex gap-8">
-          <h3 className="text-bombay-400 font-semibold text-2xl">Details</h3>
-          <h3 className="text-slate-700 font-semibold text-2xl">Reviews</h3>
+          <h3
+            onClick={() => setActiveSection("details")}
+            className={`cursor-pointer text-2xl font-semibold ${
+              activeSection === "details" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
+            }`}
+          >
+            Details
+          </h3>
+          <h3
+            onClick={() => setActiveSection("reviews")}
+            className={`cursor-pointer text-2xl font-semibold ${
+              activeSection === "reviews" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
+            }`}
+          >
+            Reviews
+          </h3>
         </div>
-        <div className="w-full flex justify-between gap-6">
-          <div className="w-3/5">
-            <select
-              name=""
-              id=""
-              className="flex px-[13px] py-[5px] rounded-[10px] border-2 border-bombay-400 mt-[36px] mb-3 bg-white"
-            >
-              <option value="Newest">Newest</option>
-              <option value="Oldest">Oldest</option>
-            </select>
-            <CommentCard
-              id={1}
-              account={{
-                name: "Nurul Ismawati",
-                picture:
-                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=F7jS2tLCeCIQ7kNvgFMadFb&_nc_gid=fe16eb56cd2d4d79abb90d43f7ee7d43&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAWAxer2rpuvQmmroF-l8Hg2DN25x0gmlvLOCdslCWPOw&oe=67257010&_nc_sid=7d3ac5",
-              }}
-              rating={5}
-              date={new Date("2024-10-28")}
-              primary={true}
-              comment={"Produk sangat bagus, build quality sangat kokoh, sangat recomended"}
-              like={1}
-              dislike={0}
-            />
-            <CommentCard
-              id={1}
-              account={{
-                name: "Salim Sulaiman",
-                picture:
-                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
-              }}
-              rating={3}
-              date={new Date("2024-10-27")}
-              primary={true}
-              comment={"Sayang banget untuk warna merah jarang ready stock"}
-              like={0}
-              dislike={2}
-            />
-            <CommentCard
-              id={2}
-              account={{
-                name: "Samy Sulaiman",
-                picture:
-                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/277318708_497873051955434_5811658738444759823_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=7O-VvV1wr3EQ7kNvgH8vWnp&_nc_gid=479686402b464408961e4fdd620a1ef1&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBFggCPQ3OAe2MYfo186duPcPXzXa2t0CbuH5MMo3Pxxg&oe=6725784F&_nc_sid=7d3ac5",
-              }}
-              rating={4}
-              date={new Date("2024-10-04")}
-              primary={false}
-              comment={"Nyaman banget buat dipakai"}
-              parentId={1}
-              like={5}
-              dislike={0}
-            />
+        <div className="w-full flex justify-between gap-[50px]">
+          <div className="w-2/3">
+            {activeSection == "details" && (
+              <div className="w-full">
+                <h4 className="text-slate-600 mt-8">No Data</h4>
+              </div>
+            )}
+            {activeSection == "reviews" && (
+              <div className="w-full">
+                <select
+                  name=""
+                  id=""
+                  className="flex px-[13px] py-[5px] rounded-[10px] border-2 border-bombay-400 mt-[36px] mb-3 bg-white"
+                >
+                  <option value="Newest">Newest</option>
+                  <option value="Oldest">Oldest</option>
+                </select>
+                <CommentCard
+                  id={1}
+                  account={{
+                    name: "Nurul Ismawati",
+                    picture:
+                      "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=F7jS2tLCeCIQ7kNvgFMadFb&_nc_gid=fe16eb56cd2d4d79abb90d43f7ee7d43&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAWAxer2rpuvQmmroF-l8Hg2DN25x0gmlvLOCdslCWPOw&oe=67257010&_nc_sid=7d3ac5",
+                  }}
+                  rating={5}
+                  date={new Date("2024-10-28")}
+                  primary={false}
+                  comment={"Produk sangat bagus, build quality sangat kokoh, sangat recomended"}
+                  like={1}
+                  dislike={0}
+                />
+                <CommentCard
+                  id={1}
+                  account={{
+                    name: "Salim Sulaiman",
+                    picture:
+                      "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
+                  }}
+                  rating={3}
+                  date={new Date("2024-10-27")}
+                  primary={false}
+                  comment={"Sayang banget untuk warna merah jarang ready stock"}
+                  like={0}
+                  dislike={2}
+                />
+                <CommentCard
+                  id={2}
+                  account={{
+                    name: "Samy Sulaiman",
+                    picture:
+                      "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/277318708_497873051955434_5811658738444759823_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=7O-VvV1wr3EQ7kNvgH8vWnp&_nc_gid=479686402b464408961e4fdd620a1ef1&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBFggCPQ3OAe2MYfo186duPcPXzXa2t0CbuH5MMo3Pxxg&oe=6725784F&_nc_sid=7d3ac5",
+                  }}
+                  rating={4}
+                  date={new Date("2024-10-04")}
+                  primary={false}
+                  comment={"Nyaman banget buat dipakai"}
+                  parentId={1}
+                  like={5}
+                  dislike={0}
+                />
+              </div>
+            )}
           </div>
-          <div className="w-2/5"></div>
+          <div className="w-1/3 mt-11 mb-8">
+            <div className="flex w-full items-center justify-between">
+              <div className="flex gap-[8px] text-[32px]">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} className={`text-sunflower-500`} />
+                ))}
+              </div>
+              <h2 className="text-[32px] text-slate-600 font-bold">4.8</h2>
+            </div>
+            <div className="w-full rounded-full h-[2px] bg-zumthor-100 mt-5 mb-5"></div>
+            <div className="w-full">
+              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+                <h4 className="text-bombay-400 font-semibold">5</h4>
+                <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
+                  <div className="h-full bg-sunflower-500 w-10/12 rounded-[4px]"></div>
+                </div>
+                <h4 className="text-slate-600 font-semibold">5</h4>
+              </div>
+              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+                <h4 className="text-bombay-400 font-semibold">5</h4>
+                <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
+                  <div className="h-full bg-sunflower-500 w-7/12 rounded-[4px]"></div>
+                </div>
+                <h4 className="text-slate-600 font-semibold">5</h4>
+              </div>
+              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+                <h4 className="text-bombay-400 font-semibold">5</h4>
+                <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
+                  <div className="h-full bg-sunflower-500 w-4/12 rounded-[4px]"></div>
+                </div>
+                <h4 className="text-slate-600 font-semibold">5</h4>
+              </div>
+              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+                <h4 className="text-bombay-400 font-semibold">5</h4>
+                <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
+                  <div className="h-full bg-sunflower-500 w-3/12 rounded-[4px]"></div>
+                </div>
+                <h4 className="text-slate-600 font-semibold">5</h4>
+              </div>
+              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+                <h4 className="text-bombay-400 font-semibold">5</h4>
+                <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
+                  <div className="h-full bg-sunflower-500 w-0 rounded-[4px]"></div>
+                </div>
+                <h4 className="text-slate-600 font-semibold">5</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
