@@ -28,6 +28,7 @@ const config: Config = {
         "black-haze-200": "#d9ded9",
         "seashell-100": "#F1F1F1",
         "bombay-400": "#ACB1B9",
+        "bombay-500": "#9095a1",
         "zumthor-100": "#E2E8F0",
         "link-water-200": "#CBD5E1",
       },

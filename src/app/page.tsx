@@ -413,7 +413,7 @@ function Home() {
         </div>
       </div>
       <div className="w-full bg-white">
-        <div className="max-w-screen-2xl mx-auto bg-curious-blue-600 relative overflow-hidden">
+        <div className="w-full mx-auto bg-curious-blue-600 relative overflow-hidden">
           <Image
             src={"/assets/white-svg.svg"}
             alt="white-svg"
