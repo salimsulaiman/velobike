@@ -174,7 +174,7 @@ function Home() {
           width={1000}
           height={1000}
           quality={100}
-          data-aos="fade-left"
+          data-aos="fade-top"
           className="absolute h-auto w-[718px] right-0 bottom-0"
         />
         <div className="w-5/12">

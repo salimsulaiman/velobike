@@ -15,6 +15,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "curious-blue-600": "#0092d8",
+        "curious-blue-700": "#016ca3",
         "porcelain-100": "#F1F3F2",
         "alto-200": "#D9D9D9",
         "tuatara-900": "#3A3A3A",
@@ -39,6 +40,7 @@ const config: Config = {
         premiere: "0px 5px 50px rgba(0, 67, 101, 0.08)",
       },
       screens: {
+        xmd: "872px",
         xlg: "1100px",
       },
     },
