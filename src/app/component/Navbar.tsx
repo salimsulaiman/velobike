@@ -6,16 +6,7 @@ import React, { useEffect, useState } from "react";
 import { CgClose, CgMenu } from "react-icons/cg";
 import { FaHouse } from "react-icons/fa6";
 import { IoSearchSharp } from "react-icons/io5";
-import {
-  MdArticle,
-  MdDirectionsBike,
-  MdDiscount,
-  MdHome,
-  MdOutlineArticle,
-  MdOutlineDiscount,
-  MdPedalBike,
-  MdShoppingCart,
-} from "react-icons/md";
+import { MdDirectionsBike, MdShoppingCart } from "react-icons/md";
 
 function Navbar() {
   const [scrolling, setScrolling] = useState(false);

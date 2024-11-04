@@ -7,6 +7,7 @@ import Image from "next/image";
 import { MdDirectionsBike } from "react-icons/md";
 import { ImPriceTags } from "react-icons/im";
 import { FaStar } from "react-icons/fa";
+import ProductCard from "./component/ProductCard";
 
 function Home() {
   const [currentItem, setCurrentItem] = useState(0); // State to track active carousel item
@@ -60,16 +61,16 @@ function Home() {
   }, []);
   return (
     <div className="w-full relative">
-      <div className="bg-alabaster-50 h-[750px] w-full pt-[165px] relative">
-        <div className="max-w-screen-xlg mx-auto flex">
-          <div className="w-3/12" data-aos="fade-right">
+      <div className="bg-alabaster-50 h-[650px] lg:h-[750px] w-full pt-[165px] relative">
+        <div className="max-w-screen-xlg mx-auto flex px-6 lg:px-2 h-full">
+          <div className="w-4/12 lg:w-3/12" data-aos="fade-right">
             <h4 className="text-slate-800 mb-3">Road Bike</h4>
-            <h1 className="text-slate-800 uppercase text-[87px] max-w-md leading-none">Santa Cruz</h1>
-            <div className="flex items-center mt-11">
+            <h1 className="text-slate-800 uppercase text-[60px] lg:text-[87px] max-w-md leading-none">Santa Cruz</h1>
+            <div className="flex flex-col-reverse md:flex-row items-start md:items-center mt-6 md:mt-11 gap-3">
               <Link href={"/"} className="text-white bg-curious-blue-600 rounded-full py-[10px] px-[32px] inline-block">
                 Buy
               </Link>
-              <h4 className="text-slate-700 text-xl font-bold ms-3">IDR 10.750.000</h4>
+              <h4 className="text-slate-700 text-lg lg:text-xl font-bold">IDR 10.750.000</h4>
             </div>
             <div className="flex bg-alto-200 p-[10px] items-center justify-center w-fit rounded-full mt-11 gap-[6px]">
               <div className="w-[47px] h-[47px] rounded-full flex items-center justify-center bg-curious-blue-600">
@@ -79,13 +80,13 @@ function Home() {
               <div className="w-[47px] h-[47px] rounded-full flex items-center justify-center bg-white"></div>
             </div>
           </div>
-          <div className="w-9/12 relative">
+          <div className="w-8/12 lg:w-9/12 relative h-full flex items-center justify-center">
             <Image
               src={"/assets/product/santacruz.png"}
               alt="santacruz"
               width={1000}
               height={1000}
-              className="w-[827px] h-auto -left-8 -top-4 absolute z-10"
+              className="w-[650px] lg:w-[827px] h-auto left-0 lg:-left-8 -top-10 lg:-top-4 z-10 relative lg:absolute"
               data-aos="fade-left"
               quality={100}
               priority
@@ -98,51 +99,51 @@ function Home() {
           width={1000}
           height={1000}
           quality={100}
-          className="absolute -left-1 bottom-0 -right-1 w-full m-0"
+          className="absolute -left-1 bottom-0 -right-1 w-full m-0 hidden lg:block"
         />
       </div>
       <div className="bg-white w-full">
-        <div className="max-w-screen-xlg min-h-[971px] mx-auto pt-[145px] pb-12 relative">
+        <div className="max-w-screen-xlg min-h-[1400px] md:min-h-[971px] mx-auto pt-[100px] md:pt-[145px] pb-12 relative px-6 lg:px-2">
           <h4 className="text-xl text-curious-blue-600 font-bold uppercase">Your Ride Start Here</h4>
           <h3 className="text-[32px] text-slate-800 mb-[74px]">Our Facilities & Features</h3>
-          <div className="grid grid-cols-3 gap-8">
-            <div className="rounded-[11px] shadow-premiere min-h-[194px] bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-8 h-fit md:h-auto">
+            <div className="rounded-[11px] shadow-premiere min-h-[194px] pb-7 bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
               <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-1/2 -translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
                 <MdDirectionsBike className="text-[35px] text-white group-hover:text-curious-blue-600 transition-all duration-200 ease-in-out" />
               </div>
               <h3 className="text-slate-800 text-xl font-medium text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
                 Various Collection
               </h3>
-              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. adipiscing elit. adipiscing elit.
+              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-center">
+                Discover a wide range of products to suit every style and need.
               </h4>
             </div>
-            <div className="rounded-[11px] shadow-premiere min-h-[194px] bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
+            <div className="rounded-[11px] shadow-premiere min-h-[194px] pb-7 bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
               <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-1/2 -translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
                 <ImPriceTags className="text-[35px] text-white group-hover:text-curious-blue-600 transition-all duration-200 ease-in-out" />
               </div>
               <h3 className="text-slate-800 text-xl font-medium text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
                 Avordable Price
               </h3>
-              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. adipiscing elit. adipiscing elit.
+              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-center">
+                Enjoy high-quality, stylish products that perfectly fit your budget.
               </h4>
             </div>
-            <div className="rounded-[11px] shadow-premiere min-h-[194px] bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
+            <div className="rounded-[11px] shadow-premiere min-h-[194px] pb-7 bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
               <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-1/2 -translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
                 <MdDirectionsBike className="text-[35px] text-white group-hover:text-curious-blue-600 transition-all duration-200 ease-in-out" />
               </div>
               <h3 className="text-slate-800 text-xl font-medium text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
                 Waranty Product
               </h3>
-              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. adipiscing elit. adipiscing elit.
+              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-center">
+                All items come with a warranty to ensure quality and customer satisfaction.
               </h4>
             </div>
           </div>
         </div>
       </div>
-      <div className="max-w-[1130px] mx-auto bg-curious-blue-600 min-h-[626px] rounded-t-[10px] -mt-[350px] mb-[18px] py-[62px] px-[30px] relative">
+      <div className="max-w-[1130px] mx-auto bg-curious-blue-600 min-h-[626px] rounded-t-none lg:rounded-t-[10px] -mt-[350px] mb-[24px] lg:mb-[18px] py-[62px] px-[30px] relative">
         <div className="absolute overflow-hidden w-full top-0 bottom-0 left-0 right-0">
           <Image
             src={"/assets/velobike-font.png"}
@@ -175,9 +176,9 @@ function Home() {
           height={1000}
           quality={100}
           data-aos="fade-top"
-          className="absolute h-auto w-[718px] right-0 bottom-0"
+          className="absolute h-auto w-[500px] lg:w-[718px] right-0 bottom-0"
         />
-        <div className="w-5/12">
+        <div className="w-full relative Z-20">
           <h4 className="text-xl text-white font-bold uppercase">Your Ride Start Here</h4>
           <h3 className="text-[32px] text-white mb-[33px]">Our Facilities & Features</h3>
           <div className="max-w-[368px]">
@@ -200,7 +201,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="max-w-[1130px] mx-auto flex justify-between mb-[77px] gap-5">
+      <div className="max-w-[1130px] mx-auto flex justify-between mb-[77px] gap-7 lg:gap-5 px-6 lg:px-2">
         <div className="bg-white w-1/2 h-[320px] shadow-premiere rounded-bl-[10px] py-[23px] px-[35px] relative overflow-hidden ">
           <Image
             src={"/assets/spiral-blue.png"}
@@ -292,7 +293,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="bg-white w-full relative overflow-hidden">
+      <div className="bg-white w-full relative overflow-hidden px-6 lg:px-2">
         <Image
           src={"/assets/skew-line-blue.png"}
           alt="skew-line-blue"
@@ -322,92 +323,12 @@ function Home() {
               Show All Product
             </Link>
           </div>
-          <div className="w-full grid grid-cols-4 gap-[32px] relative z-10">
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[32px] relative z-10">
             {/* product */}
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px]">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px]">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px]">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
-            <div className="min-h-[337px] bg-transparent py-[17px] px-[6px] rounded-[12px]">
-              <div className="h-[179px] rounded-[10px] mb-[22px] overflow-hidden">
-                <Image
-                  src={"/assets/product/FELT-fixie.png"}
-                  alt="FELT-fixie"
-                  width={1000}
-                  height={1000}
-                  quality={80}
-                  className="w-full h-auto"
-                />
-              </div>
-              <h4 className="text-big-stone-950 mb-[7px]">FELT Fixie</h4>
-              <h5 className="text-slate-500 text-[12px] mb-[7px]">Fixie Bike</h5>
-              <h4 className="text-big-stone-950 font-bold mb-[11px]">IDR 6.750.000</h4>
-              <Link
-                href={"/"}
-                className="text-white bg-curious-blue-600 text-[12px] p-[10px] text-center w-full inline-block rounded-[14px]"
-              >
-                Show More
-              </Link>
-            </div>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
             {/* end product */}
           </div>
         </div>
