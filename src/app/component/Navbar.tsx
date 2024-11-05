@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CgClose, CgMenu } from "react-icons/cg";
 import { IoSearchSharp } from "react-icons/io5";
