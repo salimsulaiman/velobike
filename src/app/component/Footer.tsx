@@ -16,8 +16,8 @@ function Footer() {
         className="absolute w-full h-full object-cover top-0 left-0"
       />
       <div className="relative w-full bg-gradient-to-b from-woodsmoke-950 via-woodsmoke-950/90 via-25% to-transparent to-100% z-20 py-4 px-6 lg:px-2">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-6 gap-[67px] pt-[88px] px-6 lg:px-2 pb-12">
-          <div className="col-span-6 md:col-span-2 text-center md:text-start">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-[67px] pt-[88px] px-6 lg:px-2 pb-12">
+          <div className="col-span-1 md:col-span-2 text-center md:text-start">
             <h3 className="text-white text-2xl uppercase">
               Velo<span className="font-bold">Bike</span>
             </h3>
@@ -31,7 +31,7 @@ function Footer() {
               Shop Now
             </Link>
           </div>
-          <ul>
+          <ul className="text-center sm:text-start">
             <li className="text-white text-xl mb-[14px] font-bold">Product</li>
             <li className="mb-[7px]">
               <Link href={"/"} className="text-silver-chalice-400 hover:text-white">
@@ -54,7 +54,7 @@ function Footer() {
               </Link>
             </li>
           </ul>
-          <ul>
+          <ul className="text-center sm:text-start">
             <li className="text-white text-xl mb-[14px] font-bold">Account</li>
             <li className="mb-[7px]">
               <Link href={"/"} className="text-silver-chalice-400 hover:text-white">
@@ -72,7 +72,7 @@ function Footer() {
               </Link>
             </li>
           </ul>
-          <ul>
+          <ul className="text-center sm:text-start">
             <li className="text-white text-xl mb-[14px] font-bold">Services</li>
             <li className="mb-[7px]">
               <Link href={"/"} className="text-silver-chalice-400 hover:text-white">
@@ -80,7 +80,7 @@ function Footer() {
               </Link>
             </li>
           </ul>
-          <ul>
+          <ul className="text-center sm:text-start">
             <li className="text-white text-xl mb-[14px] font-bold">Help</li>
             <li className="mb-[7px]">
               <Link href={"/"} className="text-silver-chalice-400 hover:text-white">
@@ -94,7 +94,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="max-w-screen-xl mx-auto mt-12 flex justify-between items-center px-6 lg:px-2 pb-8">
+        <div className="max-w-screen-xl mx-auto mt-12 flex flex-col sm:flex-row justify-between items-center px-6 lg:px-2 pb-8">
           <h5 className="text-white text-[12px]">
             Copyright &copy; 2024{" "}
             <span className="uppercase text-curious-blue-600">
@@ -102,7 +102,7 @@ function Footer() {
             </span>{" "}
             All Rights Reserved
           </h5>
-          <div className="flex gap-3">
+          <div className="flex gap-3 mt-8 sm:mt-0">
             <Link href={"/"}>
               <FaLinkedin className="text-[34px] text-white" />
             </Link>

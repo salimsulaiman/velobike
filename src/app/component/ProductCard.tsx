@@ -4,7 +4,7 @@ import React from "react";
 
 function ProductCard() {
   return (
-    <div className="h-fit bg-transparent py-[17px] px-[6px] rounded-[12px] my-5">
+    <div className="h-fit bg-transparent py-[17px] px-[6px] rounded-[12px] my-2 sm:my-5">
       <div className="h-full rounded-[10px] mb-[22px] overflow-hidden">
         <Image
           src={"/assets/product/FELT-fixie.png"}

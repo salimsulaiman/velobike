@@ -61,32 +61,37 @@ function Home() {
   }, []);
   return (
     <div className="w-full relative">
-      <div className="bg-alabaster-50 h-[650px] lg:h-[750px] w-full pt-[165px] relative">
-        <div className="max-w-screen-xlg mx-auto flex px-6 lg:px-2 h-full">
-          <div className="w-4/12 lg:w-3/12" data-aos="fade-right">
+      <div className="bg-alabaster-50 h-auto lg:h-[750px] w-full pt-[140px] sm:pt-[165px] pb-6 relative">
+        <div className="max-w-screen-xlg mx-auto flex flex-col md:flex-row px-6 lg:px-2 h-full">
+          <div className="w-full md:w-4/12 lg:w-3/12" data-aos="fade-right">
             <h4 className="text-slate-800 mb-3">Road Bike</h4>
-            <h1 className="text-slate-800 uppercase text-[60px] lg:text-[87px] max-w-md leading-none">Santa Cruz</h1>
-            <div className="flex flex-col-reverse md:flex-row items-start md:items-center mt-6 md:mt-11 gap-3">
-              <Link href={"/"} className="text-white bg-curious-blue-600 rounded-full py-[10px] px-[32px] inline-block">
+            <h1 className="text-slate-800 uppercase text-[40px] sm:text-[60px] lg:text-[87px] max-w-full md:max-w-md leading-none">
+              Santa Cruz
+            </h1>
+            <div className="flex flex-row items-center mt-6 md:mt-11 gap-3">
+              <Link
+                href={"/"}
+                className="text-white bg-curious-blue-600 rounded-full py-[10px] px-[32px] inline-block text-sm sm:text-base"
+              >
                 Buy
               </Link>
               <h4 className="text-slate-700 text-lg lg:text-xl font-bold">IDR 10.750.000</h4>
             </div>
-            <div className="flex bg-alto-200 p-[10px] items-center justify-center w-fit rounded-full mt-11 gap-[6px]">
-              <div className="w-[47px] h-[47px] rounded-full flex items-center justify-center bg-curious-blue-600">
-                <div className="w-[39px] h-[39px] border-2 border-alto-200 rounded-full"></div>
+            <div className="flex bg-alto-200 p-[10px] items-center justify-center w-fit rounded-full mt-6 md:mt-11 gap-[6px]">
+              <div className="w-[30px] sm:w-[47px] h-[30px] sm:h-[47px] rounded-full flex items-center justify-center bg-curious-blue-600">
+                <div className="w-[22px] sm:w-[39px] h-[22px] sm:h-[39px] border-[1px] sm:border-2 border-alto-200 rounded-full"></div>
               </div>
-              <div className="w-[47px] h-[47px] rounded-full flex items-center justify-center bg-tuatara-900"></div>
-              <div className="w-[47px] h-[47px] rounded-full flex items-center justify-center bg-white"></div>
+              <div className="w-[30px] sm:w-[47px] h-[30px] sm:h-[47px] rounded-full flex items-center justify-center bg-tuatara-900"></div>
+              <div className="w-[30px] sm:w-[47px] h-[30px] sm:h-[47px] rounded-full flex items-center justify-center bg-white"></div>
             </div>
           </div>
-          <div className="w-8/12 lg:w-9/12 relative h-full flex items-center justify-center">
+          <div className="w-full md:w-8/12 lg:w-9/12 relative h-full flex items-center justify-center mt-4 md:mt-0">
             <Image
               src={"/assets/product/santacruz.png"}
               alt="santacruz"
               width={1000}
               height={1000}
-              className="w-[650px] lg:w-[827px] h-auto left-0 lg:-left-8 -top-10 lg:-top-4 z-10 relative lg:absolute"
+              className="w-[650px] lg:w-[827px] h-auto -top-0 lg:-top-4 z-10 relative lg:absolute"
               data-aos="fade-left"
               quality={100}
               priority
@@ -103,47 +108,47 @@ function Home() {
         />
       </div>
       <div className="bg-white w-full">
-        <div className="max-w-screen-xlg min-h-[1400px] md:min-h-[971px] mx-auto pt-[100px] md:pt-[145px] pb-12 relative px-6 lg:px-2">
-          <h4 className="text-xl text-curious-blue-600 font-bold uppercase">Your Ride Start Here</h4>
-          <h3 className="text-[32px] text-slate-800 mb-[74px]">Our Facilities & Features</h3>
+        <div className="max-w-screen-xlg min-h-[1350px] sm:min-h-[1400px] md:min-h-[971px] mx-auto pt-[70px] sm:pt-[100px] md:pt-[145px] pb-12 relative px-6 lg:px-2">
+          <h4 className="text-sm sm:text-xl text-curious-blue-600 font-bold uppercase">Your Ride Start Here</h4>
+          <h3 className="text-2xl sm:text-[32px] text-slate-800 mb-[74px]">Our Facilities & Features</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-8 h-fit md:h-auto">
             <div className="rounded-[11px] shadow-premiere min-h-[194px] pb-7 bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
-              <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-1/2 -translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
+              <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-6 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
                 <MdDirectionsBike className="text-[35px] text-white group-hover:text-curious-blue-600 transition-all duration-200 ease-in-out" />
               </div>
-              <h3 className="text-slate-800 text-xl font-medium text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
+              <h3 className="text-slate-800 px-[35px] sm:px-0 text-xl font-medium text-start sm:text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
                 Various Collection
               </h3>
-              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-center">
+              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-start sm:text-center">
                 Discover a wide range of products to suit every style and need.
               </h4>
             </div>
             <div className="rounded-[11px] shadow-premiere min-h-[194px] pb-7 bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
-              <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-1/2 -translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
+              <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-6 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
                 <ImPriceTags className="text-[35px] text-white group-hover:text-curious-blue-600 transition-all duration-200 ease-in-out" />
               </div>
-              <h3 className="text-slate-800 text-xl font-medium text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
+              <h3 className="text-slate-800 px-[35px] sm:px-0 text-xl font-medium text-start sm:text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
                 Avordable Price
               </h3>
-              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-center">
+              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-start sm:text-center">
                 Enjoy high-quality, stylish products that perfectly fit your budget.
               </h4>
             </div>
             <div className="rounded-[11px] shadow-premiere min-h-[194px] pb-7 bg-white relative border-[1px] border-curious-blue-600 hover:bg-curious-blue-600 group transition-all duration-200 ease-in-out">
-              <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-1/2 -translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
+              <div className="h-[59px] w-[59px] bg-curious-blue-600 border-2 border-transparent group-hover:border-curious-blue-600 group-hover:bg-white absolute left-6 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 -top-8 rounded-[7px] flex items-center justify-center transition-all duration-200 ease-in-out">
                 <MdDirectionsBike className="text-[35px] text-white group-hover:text-curious-blue-600 transition-all duration-200 ease-in-out" />
               </div>
-              <h3 className="text-slate-800 text-xl font-medium text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
+              <h3 className="text-slate-800 px-[35px] sm:px-0 text-xl font-medium text-start sm:text-center mt-[54px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default">
                 Waranty Product
               </h3>
-              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-center">
+              <h4 className="text-slate-600 mt-3 px-[35px] group-hover:text-white transition-all duration-200 ease-in-out cursor-default text-start sm:text-center">
                 All items come with a warranty to ensure quality and customer satisfaction.
               </h4>
             </div>
           </div>
         </div>
       </div>
-      <div className="max-w-[1130px] mx-auto bg-curious-blue-600 min-h-[626px] rounded-t-none lg:rounded-t-[10px] -mt-[350px] mb-[24px] lg:mb-[18px] py-[62px] px-[30px] relative">
+      <div className="max-w-[1130px] mx-auto bg-curious-blue-600  rounded-t-none lg:rounded-t-[10px] -mt-[350px] mb-[24px] lg:mb-[18px] py-[62px] px-[30px] relative">
         <div className="absolute overflow-hidden w-full top-0 bottom-0 left-0 right-0">
           <Image
             src={"/assets/velobike-font.png"}
@@ -176,11 +181,11 @@ function Home() {
           height={1000}
           quality={100}
           data-aos="fade-top"
-          className="absolute h-auto w-[500px] lg:w-[718px] right-0 bottom-0"
+          className="absolute h-auto w-[500px] lg:w-[718px] right-0 bottom-0 hidden md:block"
         />
         <div className="w-full relative Z-20">
-          <h4 className="text-xl text-white font-bold uppercase">Your Ride Start Here</h4>
-          <h3 className="text-[32px] text-white mb-[33px]">Our Facilities & Features</h3>
+          <h4 className="text-sm sm:text-xl text-white font-bold uppercase">Your Ride Start Here</h4>
+          <h3 className="text-2xl sm:text-[32px] text-white mb-[33px]">Our Facilities & Features</h3>
           <div className="max-w-[368px]">
             <h4 className="text-white font-bold mb-[10px]">Durability</h4>
             <h4 className="text-white mb-[33px]">
@@ -201,8 +206,8 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="max-w-[1130px] mx-auto flex justify-between mb-[77px] gap-7 lg:gap-5 px-6 lg:px-2">
-        <div className="bg-white w-1/2 h-[320px] shadow-premiere rounded-bl-[10px] py-[23px] px-[35px] relative overflow-hidden ">
+      <div className="max-w-[1130px] mx-auto flex flex-col md:flex-row justify-between mb-[77px] gap-7 lg:gap-5 px-6 lg:px-2">
+        <div className="bg-white w-full md:w-1/2 h-[240px] sm:h-[320px] shadow-premiere rounded-bl-[10px] py-[23px] px-[35px] relative overflow-hidden ">
           <Image
             src={"/assets/spiral-blue.png"}
             alt="bikes-category"
@@ -233,7 +238,7 @@ function Home() {
             width={1000}
             height={1000}
             quality={100}
-            className="absolute -left-[350px] h-auto w-[749px] max-w-none"
+            className="absolute -left-[450px] sm:-left-[350px] h-auto w-[749px] max-w-none"
           />
           <div className="w-full h-full">
             <h3 className="text-slate-800 text-xl font-bold text-right">Bikes</h3>
@@ -250,7 +255,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-boulder-500 w-1/2 h-[320px] shadow-premiere rounded-br-[10px] py-[23px] px-[35px] relative overflow-hidden">
+        <div className="bg-boulder-500 w-full md:w-1/2 h-[240px] sm:h-[320px] shadow-premiere rounded-br-[10px] py-[23px] px-[35px] relative overflow-hidden">
           <Image
             src={"/assets/skew-line.png"}
             alt="skew-line"
@@ -277,7 +282,7 @@ function Home() {
             alt="bikes-category"
             width={1000}
             height={1000}
-            className="absolute -right-[120px] h-auto w-[468px] max-w-none"
+            className="absolute -right-[200px] sm:-right-[120px] h-auto w-[468px] max-w-none"
           />
           <div className="w-full h-full">
             <h3 className="text-white text-xl font-bold">Accessories</h3>
@@ -316,11 +321,14 @@ function Home() {
             height={1000}
             className="absolute w-[160px] top-[82px] right-[187px]"
           />
-          <h4 className="text-xl text-curious-blue-600 font-bold uppercase relative z-10">Choose Your Bikes</h4>
-          <div className="w-full flex justify-between items-end mb-[74px] relative z-10">
-            <h3 className="text-[32px] text-slate-800">Our Sepcial Bikes</h3>
+          <h4 className="text-sm sm:text-xl text-curious-blue-600 font-bold uppercase relative z-10">
+            Choose Your Bikes
+          </h4>
+          <div className="w-full flex justify-between items-end mb-[50px] sm:mb-[74px] relative z-10">
+            <h3 className="text-2xl sm:text-[32px] text-slate-800">Our Sepcial Bikes</h3>
             <Link href={"/"} className="text-slate-600 hover:text-slate-800 relative z-10">
-              Show All Product
+              <span className="hidden sm:block">Show All Product</span>
+              <span className="block sm:hidden text-sm">Show All</span>
             </Link>
           </div>
           <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[32px] relative z-10">
