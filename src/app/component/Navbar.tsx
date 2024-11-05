@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CgClose, CgMenu } from "react-icons/cg";
-import { FaHouse } from "react-icons/fa6";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdDirectionsBike, MdShoppingCart } from "react-icons/md";
 
@@ -13,8 +12,6 @@ function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const pathname = usePathname();
-
-  const router = useRouter();
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
