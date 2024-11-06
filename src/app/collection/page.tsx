@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import AccessoriesCard from "../component/AccessoriesCard";
