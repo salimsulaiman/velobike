@@ -13,11 +13,12 @@ function Footer() {
         width={2000}
         height={2000}
         quality={100}
+        priority
         className="absolute w-full h-full object-cover top-0 left-0"
       />
       <div className="relative w-full bg-gradient-to-b from-woodsmoke-950 via-woodsmoke-950/90 via-25% to-transparent to-100% z-20 py-4 px-6 lg:px-2">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-[67px] pt-[88px] px-6 lg:px-2 pb-12">
-          <div className="col-span-1 md:col-span-2 text-center md:text-start">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-4 md:grid-cols-6 gap-[50px] md:gap-[67px] pt-[88px] px-6 lg:px-2 pb-12">
+          <div className="col-span-1 sm:col-span-4 md:col-span-2 text-center md:text-start">
             <h3 className="text-white text-2xl uppercase">
               Velo<span className="font-bold">Bike</span>
             </h3>
@@ -94,7 +95,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="max-w-screen-xl mx-auto mt-12 flex flex-col sm:flex-row justify-between items-center px-6 lg:px-2 pb-8">
+        <div className="max-w-screen-xl mx-auto mt-8 md:mt-12 flex flex-col sm:flex-row justify-between items-center px-6 lg:px-2 pb-8">
           <h5 className="text-white text-[12px]">
             Copyright &copy; 2024{" "}
             <span className="uppercase text-curious-blue-600">

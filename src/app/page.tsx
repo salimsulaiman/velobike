@@ -16,24 +16,21 @@ function Home() {
     {
       id: 1,
       name: "Nurul Ismawati",
-      image:
-        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
+      image: "https://utfs.io/f/sIzmAMtbfJsZEG2mlWuq8oHJAVax9Whg37P0slGNSz5wd6X1",
       rating: 5,
       review: "Produk sangat bagus, build quality sangat kokoh. sangat recomended",
     },
     {
       id: 2,
       name: "Salim Sulaiman",
-      image:
-        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
+      image: "https://utfs.io/f/sIzmAMtbfJsZ4iGOGglU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
       rating: 4,
       review: "Sangat mantap, secara keseluruhan saya sangat suka dengan produk yang dihadirkan",
     },
     {
       id: 3,
       name: "Samy Sulaiman",
-      image:
-        "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
+      image: "https://utfs.io/f/sIzmAMtbfJsZ4RSPBylU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
       rating: 5,
       review: "Keren banget, kualitas gk main main ini",
     },
@@ -92,7 +89,7 @@ function Home() {
               width={1000}
               height={1000}
               className="w-[650px] lg:w-[827px] h-auto -top-0 lg:-top-4 z-10 relative lg:absolute"
-              data-aos="fade-left"
+              data-aos="zoom-in"
               quality={100}
               priority
             />
@@ -325,7 +322,7 @@ function Home() {
             Choose Your Bikes
           </h4>
           <div className="w-full flex justify-between items-end mb-[50px] sm:mb-[74px] relative z-10">
-            <h3 className="text-2xl sm:text-[32px] text-slate-800">Our Sepcial Bikes</h3>
+            <h3 className="text-2xl sm:text-[32px] text-slate-800">Our Special Bikes</h3>
             <Link href={"/"} className="text-slate-600 hover:text-slate-800 relative z-10">
               <span className="hidden sm:block">Show All Product</span>
               <span className="block sm:hidden text-sm">Show All</span>
@@ -342,23 +339,23 @@ function Home() {
         </div>
       </div>
       <div className="w-full bg-white">
-        <div className="w-full mx-auto bg-curious-blue-600 relative overflow-hidden">
+        <div className="w-full mx-auto bg-curious-blue-600 relative overflow-hidden py-20 sm:py-32 px-6">
           <Image
             src={"/assets/white-svg.svg"}
             alt="white-svg"
             width={1000}
             height={1000}
             quality={100}
-            className="absolute -left-1 top-0 right-1 w-full z-10 m-0 border-none"
+            className="absolute -left-1 top-0 right-1 w-full z-10 m-0 border-none hidden sm:block"
           />
-          <div className="max-w-screen-xlg mx-auto min-h-[573px] relative flex flex-col justify-center">
+          <div className="max-w-screen-xlg mx-auto relative flex flex-col justify-center">
             <Image
               src={"/assets/abstract-square.png"}
               alt="abstract-square"
               width={1000}
               height={1000}
               quality={100}
-              className="absolute -right-[150px] w-[955px]"
+              className="absolute -right-[150px] w-[955px] opacity-20 lg:opacity-100 max-w-none"
             />
             <Image
               src={"/assets/abstract-skew.png"}
@@ -382,17 +379,19 @@ function Home() {
               width={3000}
               height={3000}
               quality={100}
-              className="absolute w-[1697px] -right-[900px] -top-[25px] scale-x-[-1] max-w-none"
+              className="absolute w-[1697px] -right-[900px] -top-[25px] scale-x-[-1] max-w-none hidden md:block"
             />
-            <h4 className="text-xl text-white font-bold uppercase z-20 mt-20">Custumer Experience</h4>
-            <h3 className="text-[32px] text-white mb-[33px] z-20">What Our Customer Say</h3>
+            <h4 className="text-sm sm:text-xl text-white font-bold uppercase z-20 mt-0 sm:mt-20">
+              Custumer Experience
+            </h4>
+            <h3 className="text-2xl sm:text-[32px] text-white mb-[33px] z-20">What Our Customer Say</h3>
             <div className="max-w-[393px] z-20 flex flex-col min-h-[150px] justify-between">
               <div className="carousel w-full">
                 {carouselItems.map((item, index) => (
                   <div
                     key={item.id}
                     className={`carousel-item w-full flex flex-col transition-opacity duration-1000 ease-in-out transform ${
-                      currentItem === index ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full absolute"
+                      currentItem === index ? "opacity-100 translate-x-0" : "opacity-0 absolute"
                     }`}
                   >
                     <div className="w-full flex gap-[18px]">
@@ -439,12 +438,12 @@ function Home() {
         </div>
       </div>
       <div className="w-full bg-alabaster-50">
-        <div className="max-w-screen-xlg min-h-[644px] py-[58px] mx-auto relative overflow-hidden">
-          <h3 className="text-slate-800 text-xl text-center uppercase">
+        <div className="max-w-screen-xlg min-h-[600px] sm:min-h-[644px] py-[58px] mx-auto relative overflow-hidden">
+          <h3 className="text-slate-800 text-lg sm:text-xl text-center uppercase">
             Velo
             <span className="font-bold">Bike</span>
           </h3>
-          <h1 className="text-slate-800 text-[48px] text-center uppercase max-w-[302px] mx-auto mt-4">
+          <h1 className="text-slate-800 text-[36px] sm:text-[48px] text-center uppercase max-w-[302px] mx-auto mt-4">
             Ride More <span className="font-bold">Worry Less</span>
           </h1>
           <Image
@@ -453,7 +452,7 @@ function Home() {
             width={1000}
             height={1000}
             quality={100}
-            className="absolute w-[815px] max-w-none left-1/2 -translate-x-1/2 -bottom-[125px]"
+            className="absolute w-[750px] sm:w-[815px] max-w-none left-1/2 -translate-x-1/2 -bottom-[125px]"
           />
         </div>
       </div>

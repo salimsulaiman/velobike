@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "instagram.fsrg6-1.fna.fbcdn.net",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "utfs.io",
+        pathname: "/**",
+      },
     ],
   },
 };
