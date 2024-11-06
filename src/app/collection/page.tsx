@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import AccessoriesCard from "../component/AccessoriesCard";
@@ -50,8 +49,8 @@ function Collection() {
   }, [carouselItems.length, currentItem]);
   return (
     <div className="w-full bg-white">
-      <div className="max-w-screen-xlg mx-auto pt-[150px] pb-6">
-        <div className="w-full h-[326px] bg-curious-blue-600 rounded-[10px] flex justify-between items-center relative">
+      <div className="max-w-screen-xlg mx-auto pt-[100px] md:pt-[150px] pb-6 px-6 lg:px-2">
+        <div className="w-full h-[150px] sm:h-[250px] md:h-[280px] lg:h-[326px] bg-curious-blue-600 rounded-[10px] flex justify-between items-center relative">
           <Image
             src={"/assets/sparkle.png"}
             alt="sparkle"
@@ -60,28 +59,20 @@ function Collection() {
             quality={100}
             className="w-[694px] top-[21px] -left-[22px] absolute"
           />
-          <div className="w-1/2 px-[64px]">
+          <div className="w-full px-8 lg:px-[64px]">
             <div className="w-full">
-              <h1 className="text-white font-bold text-[40px]">Grab Upto 40% Off On Selected Bikes</h1>
-              <Link
-                href={"/"}
-                className="bg-white hover:bg-slate-100 text-woodsmoke-950 inline-block px-[32px] py-[10px] rounded-full mt-[17px]"
+              <h1 className="text-white font-bold text-xs sm:text-base md:text-2xl lg:text-[40px] line-clamp-2 w-1/2">
+                Grab Upto 40% Off On Selected Bikes
+              </h1>
+              {/* <Link
+                href={"/collection/1"}
+                className="text-curious-blue-600 bg-white text-[12px] mt-4 p-[10px] text-center w-fit inline-block rounded-full"
               >
                 Shop Now
-              </Link>
+              </Link> */}
             </div>
           </div>
-          <div className="w-1/2 h-full relative overflow-hidden">
-            <Image
-              src={"/assets/promo/man-riding.png"}
-              alt="man-riding"
-              width={1000}
-              height={1000}
-              quality={100}
-              className="absolute w-full h-full"
-            />
-          </div>
-          <div className="w-full absolute bottom-[38px] flex gap-[6px] items-center justify-center">
+          <div className="w-full absolute bottom-5 sm:bottom-[38px] flex gap-[6px] items-center justify-center">
             {carouselItems.map((_, index) => (
               <button
                 key={index}
@@ -93,9 +84,145 @@ function Collection() {
             ))}
           </div>
         </div>
+
         {/* product */}
         <div className="w-full py-6">
-          <div className="flex gap-[11px]">
+          {/* filter */}
+          <div className="hidden md:flex gap-4 w-full">
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="text-woodsmoke-950 text-sm px-4 py-3 bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              >
+                Type
+                <span className="ms-[2px] mt-[2px]">
+                  <FaAngleDown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow">
+                <li>
+                  <a>Bikes</a>
+                </li>
+                <li>
+                  <a>Accessories</a>
+                </li>
+              </ul>
+            </div>
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="text-woodsmoke-950 text-sm px-4 py-3 bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              >
+                Variant
+                <span className="ms-[2px] mt-[2px]">
+                  <FaAngleDown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow">
+                <li>
+                  <a>Fixie Bike</a>
+                </li>
+                <li>
+                  <a>Road Bike</a>
+                </li>
+                <li>
+                  <a>Mountaine Bike</a>
+                </li>
+              </ul>
+            </div>
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="text-woodsmoke-950 text-sm px-4 py-3 bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              >
+                Price
+                <span className="ms-[2px] mt-[2px]">
+                  <FaAngleDown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow">
+                <li>
+                  <a>Cheapest</a>
+                </li>
+                <li>
+                  <a>Most Expensive</a>
+                </li>
+              </ul>
+            </div>
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="text-woodsmoke-950 text-sm px-4 py-3 bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              >
+                Review
+                <span className="ms-[2px] mt-[2px]">
+                  <FaAngleDown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow">
+                <li>
+                  <a>3 Stars</a>
+                </li>
+                <li>
+                  <a>4 Stars</a>
+                </li>
+                <li>
+                  <a>5 Stars</a>
+                </li>
+              </ul>
+            </div>
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="text-woodsmoke-950 text-sm px-4 py-3 bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              >
+                Color
+                <span className="ms-[2px] mt-[2px]">
+                  <FaAngleDown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow">
+                <li>
+                  <a>Black</a>
+                </li>
+                <li>
+                  <a>White</a>
+                </li>
+                <li>
+                  <a>Red</a>
+                </li>
+                <li>
+                  <a>Blue</a>
+                </li>
+              </ul>
+            </div>
+            <div className="dropdown">
+              <div
+                tabIndex={0}
+                role="button"
+                className="text-woodsmoke-950 text-sm px-4 py-3 bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              >
+                Sort
+                <span className="ms-[2px] mt-[2px]">
+                  <FaAngleDown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow">
+                <li>
+                  <a>Ascending</a>
+                </li>
+                <li>
+                  <a>Descending</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="overflow-x-scroll no-scrollbar whitespace-nowrap flex gap-4 md:hidden">
             <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
               Type
               <span className="ms-[2px] mt-[2px]">
@@ -127,11 +254,12 @@ function Collection() {
               </span>
             </button>
           </div>
-          <h4 className="text-xl text-curious-blue-600 font-bold uppercase relative z-10 mt-[32px]">
+          {/* end filter */}
+          <h4 className="text-sm sm:text-xl text-curious-blue-600 font-bold uppercase relative z-10 mt-[32px]">
             Choose Your Bikes
           </h4>
-          <h3 className="text-[32px] text-slate-800 mb-[35px]">Our Sepcial Bikes</h3>
-          <div className="w-full grid grid-cols-4 gap-[32px] relative z-10">
+          <h3 className="text-2xl sm:text-[32px] text-slate-800 mb-4 sm:mb-[35px]">Our Special Bikes</h3>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-[32px] relative z-10">
             {/* product */}
             <ProductCard />
             <ProductCard />
@@ -145,22 +273,22 @@ function Collection() {
           </div>
         </div>
         <div className="w-full flex gap-2 justify-center">
-          <button className="rounded-full w-[18px] h-[18px] bg-slate-800"></button>
-          <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
-          <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
+          <button className="rounded-full w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] bg-slate-800"></button>
+          <button className="rounded-full w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] bg-alto-200"></button>
+          <button className="rounded-full w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] bg-alto-200"></button>
         </div>
       </div>
-      <div className="max-w-screen-2xl mx-auto bg-curious-blue-600 py-6 overflow-hidden relative">
+      <div className="max-w-screen-2xl  flex items-center mx-auto bg-curious-blue-600 py-6 overflow-hidden relative">
         <Image
           src={"/assets/white-svg.svg"}
           alt="white-svg"
           width={1000}
           height={1000}
           quality={100}
-          className="top-0 w-full z-10 relative -mt-6 border-none"
+          className="-top-0 w-full z-10 absolute border-none hidden sm:block"
           style={{ transform: "scaleX(-1)" }}
         />
-        <div className="max-w-screen-xlg mx-auto relative">
+        <div className="max-w-screen-xlg mx-auto relative mt-4 md:mt-28  px-6 lg:px-2">
           <Image
             src={"/assets/abstract-square-v2.png"}
             alt="abstract-square-v2"
@@ -177,18 +305,18 @@ function Collection() {
             quality={100}
             className="absolute top-1/2 -translate-y-1/3 w-[266px] -left-[100px]"
           />
-          <h4 className="text-xl text-white font-bold uppercase relative z-10 mt-[32px]">Accessories</h4>
-          <h3 className="text-[32px] text-white mb-[35px]">Extend Your Style</h3>
-          <div className="w-full grid grid-cols-4 gap-[31px] justify-between mt-[43px]">
+          <h4 className="text-sm sm:text-xl text-white font-bold uppercase relative z-10 mt-[32px]">Accessories</h4>
+          <h3 className="text-2xl sm:text-[32px] text-white mb-[35px]">Extend Your Style</h3>
+          <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-[32px] relative z-10">
             <AccessoriesCard />
             <AccessoriesCard />
             <AccessoriesCard />
             <AccessoriesCard />
           </div>
-          <div className="w-full flex gap-2 justify-center my-14">
-            <button className="rounded-full w-[18px] h-[18px] bg-slate-800"></button>
-            <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
-            <button className="rounded-full w-[18px] h-[18px] bg-alto-200"></button>
+          <div className="w-full flex gap-2 justify-center my-8 relative z-40">
+            <button className="rounded-full w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] bg-slate-800"></button>
+            <button className="rounded-full w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] bg-alto-200"></button>
+            <button className="rounded-full w-[14px] sm:w-[18px] h-[14px] sm:h-[18px] bg-alto-200"></button>
           </div>
         </div>
       </div>

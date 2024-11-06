@@ -29,9 +29,16 @@ function Detail() {
           />
         </div>
       </div>
-      <div className="w-full relative bg-white min-h-[200px]">
-        <div className="max-w-screen-xlg mx-auto flex gap-[69px]">
-          <div className="w-1/2 relative">
+      <div className="w-full relative bg-white px-6 lg:px-2">
+        <div className="max-w-screen-xlg mx-auto flex flex-col md:flex-row gap-[69px]">
+          <div className="w-full md:w-1/2 relative">
+            <div className="w full flex md:hidden gap-[6px] items-center absolute left-2 -top-[130px]">
+              <h5 className="text-[14px] text-bombay-400">Bikes</h5>
+              <div className="h-[8px] w-[8px] rounded-full bg-bombay-400"></div>
+              <h5 className="text-[14px] text-bombay-400">Fixie Bike</h5>
+              <div className="h-[8px] w-[8px] rounded-full bg-bombay-400"></div>
+              <h5 className="text-[14px] text-slate-500">FELT Fixie</h5>
+            </div>
             <div className="aspect-square bg-seashell-100 relative -top-[97px] rounded-[10px] overflow-hidden flex items-center justify-center p-4">
               <Image
                 src={"/assets/product/FELT-fixie.png"}
@@ -44,7 +51,7 @@ function Detail() {
             </div>
             <div className="w-full">
               <Swiper
-                className="relative -top-16"
+                className="relative -top-[70px] md:-top-16"
                 slidesPerView={3}
                 spaceBetween={30}
                 freeMode={true}
@@ -69,9 +76,9 @@ function Detail() {
               </Swiper>
             </div>
           </div>
-          <div className="w-1/2 relative">
+          <div className="w-full md:w-1/2 relative -top-32 md:-top-0">
             {/* subproduct */}
-            <div className="w full flex gap-[6px] items-center absolute -left-[49px] -top-[35px]">
+            <div className="w full hidden md:flex gap-[6px] items-center absolute -left-[49px] -top-[35px]">
               <h5 className="text-[14px] text-bombay-400">Bikes</h5>
               <div className="h-[8px] w-[8px] rounded-full bg-bombay-400"></div>
               <h5 className="text-[14px] text-bombay-400">Fixie Bike</h5>
@@ -80,8 +87,8 @@ function Detail() {
             </div>
             <div className="w-full mt-[28px]">
               <h1 className="text-slate-700 text-[32px] font-medium">FELT Fixie</h1>
-              <h4 className="text-slate-500 text-xl mt-2">Fixie Bike</h4>
-              <div className="flex items-center mt-[15px] gap-[11px]">
+              <h4 className="text-slate-500 text-xl mt-4 md:mt-2">Fixie Bike</h4>
+              <div className="flex items-center mt-[18px] md:mt-[15px] gap-[11px]">
                 <div className="flex gap-[3px] text-[24px] items-center">
                   <FaStar className="text-sunflower-500" />
                   <FaStar className="text-sunflower-500" />
@@ -91,7 +98,7 @@ function Detail() {
                 </div>
                 <h4 className="text-slate-500">10 Reviews</h4>
               </div>
-              <h1 className="text-slate-700 text-[40px] font-semibold mt-[14px]">IDR 6.750.000</h1>
+              <h1 className="text-slate-700 text-3xl md:text-[40px] font-semibold mt-6 md:mt-[14px]">IDR 6.750.000</h1>
               <div className="flex items-center gap-[7px] mt-[14px]">
                 <h4 className="text-slate-700 font-medium">Color</h4>
                 <div className="h-[6px] w-[6px] rounded-full bg-bombay-400"></div>
@@ -103,19 +110,24 @@ function Detail() {
                 </div>
                 <div className="w-[47px] h-[47px] rounded-full flex items-center justify-center bg-[#F55861] cursor-pointer"></div>
               </div>
-              <button className="text-white bg-curious-blue-600 rounded-[13px] w-full mt-[38px] py-[10px] text-center font-semibold">
-                Add to cart
-              </button>
+              <div className="flex flex-col md:flex-row gap-4">
+                <button className="text-curious-blue-600 bg-white hover:bg-curious-blue-600 hover:text-white border-2 border-curious-blue-600 rounded-[13px] w-full mt-[38px] py-[10px] text-center font-semibold">
+                  Add to cart
+                </button>
+                <button className="text-white bg-curious-blue-600 hover:bg-curious-blue-700 rounded-[13px] w-full mt-0 md:mt-[38px] py-[10px] text-center font-semibold">
+                  Buy now
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-screen-xlg mx-auto relative bg-white">
-        <div className="w-full flex gap-8">
+      <div className="max-w-screen-xlg mx-auto relative bg-white px-6 lg:px-2 -mt-20 md:mt-10">
+        <div className="w-full flex gap-4 md:gap-8">
           <h3
             onClick={() => setActiveSection("details")}
-            className={`cursor-pointer text-2xl font-semibold ${
+            className={`cursor-pointer text-lg md:text-xl font-semibold ${
               activeSection === "details" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
             }`}
           >
@@ -123,15 +135,15 @@ function Detail() {
           </h3>
           <h3
             onClick={() => setActiveSection("reviews")}
-            className={`cursor-pointer text-2xl font-semibold ${
+            className={`cursor-pointer text-lg md:text-xl font-semibold ${
               activeSection === "reviews" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
             }`}
           >
             Reviews
           </h3>
         </div>
-        <div className="w-full flex justify-between gap-[50px]">
-          <div className="w-2/3">
+        <div className="w-full flex flex-col md:flex-row justify-between gap-[50px]">
+          <div className="w-full md:w-2/3">
             {activeSection == "details" && (
               <div className="w-full">
                 <h4 className="text-slate-600 mt-8">No Data</h4>
@@ -142,7 +154,7 @@ function Detail() {
                 <select
                   name=""
                   id=""
-                  className="flex px-[13px] py-[5px] rounded-[10px] border-2 border-bombay-400 mt-[36px] mb-3 bg-white"
+                  className="flex px-[13px] py-[5px] rounded-[10px] border-2 border-bombay-400 mt-4 md:mt-8 mb-4 md:mb-8 bg-white"
                 >
                   <option value="Newest">Newest</option>
                   <option value="Oldest">Oldest</option>
@@ -151,8 +163,7 @@ function Detail() {
                   id={1}
                   account={{
                     name: "Nurul Ismawati",
-                    picture:
-                      "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/419521185_3778436632376022_531051164506999775_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=106&_nc_ohc=F7jS2tLCeCIQ7kNvgFMadFb&_nc_gid=fe16eb56cd2d4d79abb90d43f7ee7d43&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYAWAxer2rpuvQmmroF-l8Hg2DN25x0gmlvLOCdslCWPOw&oe=67257010&_nc_sid=7d3ac5",
+                    picture: "https://utfs.io/f/sIzmAMtbfJsZEG2mlWuq8oHJAVax9Whg37P0slGNSz5wd6X1",
                   }}
                   rating={5}
                   date={new Date("2024-10-28")}
@@ -165,8 +176,7 @@ function Detail() {
                   id={1}
                   account={{
                     name: "Salim Sulaiman",
-                    picture:
-                      "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5",
+                    picture: "https://utfs.io/f/sIzmAMtbfJsZ4iGOGglU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
                   }}
                   rating={3}
                   date={new Date("2024-10-27")}
@@ -179,8 +189,7 @@ function Detail() {
                   id={2}
                   account={{
                     name: "Samy Sulaiman",
-                    picture:
-                      "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/277318708_497873051955434_5811658738444759823_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=7O-VvV1wr3EQ7kNvgH8vWnp&_nc_gid=479686402b464408961e4fdd620a1ef1&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYBFggCPQ3OAe2MYfo186duPcPXzXa2t0CbuH5MMo3Pxxg&oe=6725784F&_nc_sid=7d3ac5",
+                    picture: "https://utfs.io/f/sIzmAMtbfJsZ4RSPBylU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
                   }}
                   rating={4}
                   date={new Date("2024-10-04")}
@@ -193,46 +202,46 @@ function Detail() {
               </div>
             )}
           </div>
-          <div className="w-1/3 mt-11 mb-8">
-            <div className="flex w-full items-center justify-between">
-              <div className="flex gap-[8px] text-[32px]">
+          <div className="w-full md:w-1/3 mt-2 md:mt-11 mb-8">
+            <div className="flex w-full items-center justify-center md:justify-between gap-4 md:gap-0">
+              <div className="flex gap-[8px] text-[24px] md:text-[28px]">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} className={`text-sunflower-500`} />
                 ))}
               </div>
-              <h2 className="text-[32px] text-slate-600 font-bold">4.8</h2>
+              <h2 className="text-[24px] md:text-[28px] text-slate-600 font-bold">4.8</h2>
             </div>
-            <div className="w-full rounded-full h-[2px] bg-zumthor-100 mt-5 mb-5"></div>
+            <div className="w-fit rounded-full h-[2px] bg-zumthor-100 mt-5 mb-5"></div>
             <div className="w-full">
-              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+              <div className="flex w-full items-center justify-center md:justify-between gap-5 md:gap-[9px] mb-[17px]">
                 <h4 className="text-bombay-400 font-semibold">5</h4>
                 <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
                   <div className="h-full bg-sunflower-500 w-10/12 rounded-[4px]"></div>
                 </div>
                 <h4 className="text-slate-600 font-semibold">5</h4>
               </div>
-              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+              <div className="flex w-full items-center justify-center md:justify-between gap-5 md:gap-[9px] mb-[17px]">
                 <h4 className="text-bombay-400 font-semibold">5</h4>
                 <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
                   <div className="h-full bg-sunflower-500 w-7/12 rounded-[4px]"></div>
                 </div>
                 <h4 className="text-slate-600 font-semibold">5</h4>
               </div>
-              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+              <div className="flex w-full items-center justify-center md:justify-between gap-5 md:gap-[9px] mb-[17px]">
                 <h4 className="text-bombay-400 font-semibold">5</h4>
                 <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
                   <div className="h-full bg-sunflower-500 w-4/12 rounded-[4px]"></div>
                 </div>
                 <h4 className="text-slate-600 font-semibold">5</h4>
               </div>
-              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+              <div className="flex w-full items-center justify-center md:justify-between gap-5 md:gap-[9px] mb-[17px]">
                 <h4 className="text-bombay-400 font-semibold">5</h4>
                 <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
                   <div className="h-full bg-sunflower-500 w-3/12 rounded-[4px]"></div>
                 </div>
                 <h4 className="text-slate-600 font-semibold">5</h4>
               </div>
-              <div className="flex w-full items-center justify-between gap-[9px] mb-[17px]">
+              <div className="flex w-full items-center justify-center md:justify-between gap-5 md:gap-[9px] mb-[17px]">
                 <h4 className="text-bombay-400 font-semibold">5</h4>
                 <div className="h-[16px] w-[250px] bg-alto-200 rounded-[4px] overflow-hidden">
                   <div className="h-full bg-sunflower-500 w-0 rounded-[4px]"></div>

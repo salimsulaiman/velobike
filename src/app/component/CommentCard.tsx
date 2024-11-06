@@ -39,7 +39,7 @@ function CommentCard({ account, rating, date, primary, comment, parentId, like, 
   return (
     <div className="w-full" key={parentId}>
       <div className="w-full flex flex-row gap-[19px] py-4">
-        <div className="h-[40px] w-[40px] rounded-full relative overflow-hidden">
+        <div className="h-[40px] min-w-[40px] rounded-full relative overflow-hidden max-w-none">
           <ProgressiveImage
             src={account?.picture}
             alt={"profile"}
@@ -51,9 +51,9 @@ function CommentCard({ account, rating, date, primary, comment, parentId, like, 
           />
         </div>
         <div className="w-full flex flex-col h-full justify-between gap-[11px]">
-          <div className="w-fit">
-            <div className="flex gap-[8px] h-full items-center">
-              <h4 className="text-slate-600">{account?.name}</h4>
+          <div className="w-full">
+            <div className="w-full flex justify-between md:justify-start gap-[8px] h-full items-center">
+              <h4 className="text-slate-600 text-sm md:text-base">{account?.name}</h4>
               <h5 className="text-bombay-400 text-[12px]">{formattedDate}</h5>
             </div>
             <div className="flex gap-[2px] text-[14px] items-center">
@@ -63,7 +63,7 @@ function CommentCard({ account, rating, date, primary, comment, parentId, like, 
             </div>
           </div>
           <div className="w-full flex flex-col gap-[9px]">
-            <h4 className="text-slate-700">{comment}</h4>
+            <h4 className="text-sm md:text-base text-slate-700">{comment}</h4>
             <div className="flex gap-[18px]">
               {primary && <h4 className="text-bombay-400 font-medium cursor-pointer">Reply</h4>}
               <div className="flex gap-[4px] items-center">
