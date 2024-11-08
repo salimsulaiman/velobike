@@ -390,7 +390,7 @@ function Home() {
                 {carouselItems.map((item, index) => (
                   <div
                     key={item.id}
-                    className={`carousel-item w-full flex flex-col transition-opacity duration-1000 ease-in-out transform ${
+                    className={`carousel-item max-w-[393px] flex flex-col transition-opacity duration-1000 ease-in-out transform ${
                       currentItem === index ? "opacity-100 translate-x-0" : "opacity-0 absolute"
                     }`}
                   >

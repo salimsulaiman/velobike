@@ -222,7 +222,7 @@ function Collection() {
               </ul>
             </div>
           </div>
-          <div className="overflow-x-scroll no-scrollbar whitespace-nowrap flex gap-4 md:hidden">
+          <div className="overflow-x-scroll no-scrollbar whitespace-nowrap flex gap-2 md:hidden">
             <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
               Type
               <span className="ms-[2px] mt-[2px]">
