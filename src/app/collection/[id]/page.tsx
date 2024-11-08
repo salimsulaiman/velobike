@@ -178,7 +178,7 @@ function Detail() {
                     <h3 className="font-semibold text-lg text-slate-700">
                       FELT Fixie - <span className="font-normal text-slate-500">Cyan Variant</span>
                     </h3>
-                    <p className="py-4">Ready to own it? Click "Buy" to complete your purchase securely.</p>
+                    <p className="py-4">Ready to own it? Click &quot;Buy&quot; to complete your purchase securely.</p>
                     <div className="modal-action">
                       <form method="dialog" className="flex gap-4">
                         {/* if there is a button in form, it will close the modal */}
