@@ -201,7 +201,7 @@ function Navbar() {
           </div>
           <div
             className={`absolute xmd:static bg-white min-h-[35vh] xmd:min-h-fit -mt-6 ${
-              toggleMenu ? "top-[100%]" : "-top-[350px]"
+              toggleMenu ? "top-[100%] opacity-100" : "-top-[350px] opacity-0"
             } w-full xmd:w-auto flex items-center px-5 left-0 right-0 transition-all duration-200 ease-in-out -z-10 rounded-b-2xl shadow-xl`}
           >
             <ul className="flex flex-col xmd:flex-row items-start xmd:items-center gap-0 xmd:gap-[4vw] w-full xmd:w-fit">

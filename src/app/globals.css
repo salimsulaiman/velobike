@@ -13,3 +13,12 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.table-specification tr {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.description-product p {
+  margin-bottom: 18px;
+  line-height: 32px;
+}
