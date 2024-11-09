@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 function page() {
-  const handleLogin = (e: any) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Success login");
   };
