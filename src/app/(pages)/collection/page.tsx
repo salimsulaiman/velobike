@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
-import AccessoriesCard from "../component/AccessoriesCard";
-import ProductCard from "../component/ProductCard";
+import AccessoriesCard from "@/app/component/AccessoriesCard";
+import ProductCard from "@/app/component/ProductCard";
 
 function Collection() {
   const [currentItem, setCurrentItem] = useState(0);
