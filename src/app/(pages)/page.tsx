@@ -12,6 +12,13 @@ import ProductCard from "../component/ProductCard";
 function Home() {
   const [currentItem, setCurrentItem] = useState(0); // State to track active carousel item
 
+  // useEffect(() => {
+  //   const userData = localStorage.getItem("user");
+  //   if (!userData) {
+  //     return route.push("/signin");
+  //   }
+  // });
+
   const carouselItems = [
     {
       id: 1,

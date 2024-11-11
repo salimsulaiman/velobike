@@ -1,15 +1,24 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CgClose, CgMenu } from "react-icons/cg";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdDirectionsBike, MdShoppingCart } from "react-icons/md";
 
+interface UserData {
+  name: string;
+  email: string;
+  password: string;
+  picture: string;
+}
+
 function Navbar() {
+  const route = useRouter();
   const [scrolling, setScrolling] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [data, setData] = useState<UserData | undefined>(undefined);
 
   const pathname = usePathname();
 
@@ -25,6 +34,11 @@ function Navbar() {
     setToggleMenu(!toggleMenu);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    route.push("/signin");
+  };
+
   const closeMenu = () => {
     setToggleMenu(false);
   };
@@ -34,6 +48,15 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  useEffect(() => {
+    const userData = localStorage.getItem("user");
+    if (userData) {
+      setData(JSON.parse(userData)); // Parse if you stored the data as JSON
+    } else {
+      setData(undefined); // Or set a default value that matches your state type
+    }
   }, []);
   return (
     <div className="w-full">
@@ -121,16 +144,30 @@ function Navbar() {
           <div className="w-12 h-12 rounded-full bg-porcelain-100 flex items-center justify-center">
             <IoSearchSharp className="text-xl" />
           </div>
-          <div className="w-12 h-12 rounded-full bg-porcelain-100 flex items-center justify-center overflow-hidden">
-            <Image
-              src={
-                "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5"
-              }
-              alt="profile"
-              className="w-full h-full text-center object-cover object-center"
-              width={500}
-              height={500}
-            />
+          <div className="dropdown dropdown-end">
+            <div
+              className="w-12 h-12 rounded-full bg-porcelain-100 flex items-center justify-center overflow-hidden"
+              role="button"
+              tabIndex={0}
+            >
+              {data?.picture && (
+                <Image
+                  src={data.picture}
+                  alt="profile"
+                  className="w-full h-full text-center object-cover object-center"
+                  width={500}
+                  height={500}
+                />
+              )}
+            </div>
+            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow mt-4">
+              <li>
+                <Link href={"/"}>Account</Link>
+              </li>
+              <li>
+                <h4 onClick={handleLogout}>Logout</h4>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -253,15 +290,15 @@ function Navbar() {
               <MdShoppingCart className="text-2xl text-slate-600 hover:text-slate-700" />
             </Link>
             <div className="w-10 h-w-10 rounded-full border-2 border-slate-400 overflow-hidden">
-              <Image
-                src={
-                  "https://instagram.fsrg6-1.fna.fbcdn.net/v/t51.2885-19/458180751_1223770658968369_4573641629844033891_n.jpg?stp=dst-jpg_s150x150&_nc_ht=instagram.fsrg6-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=IoMmAQTjCMkQ7kNvgFa6lzF&_nc_gid=aed5ac4a46754d7d99d9a3ba483d9c69&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AYDeYGPLZYFfZEnWGKPo4zrowkTpG8LX-WBONEvAwo0b8w&oe=67251442&_nc_sid=7d3ac5"
-                }
-                alt="profile"
-                className="w-full h-full text-center object-cover object-center"
-                width={500}
-                height={500}
-              />
+              {data?.picture && (
+                <Image
+                  src={data.picture}
+                  alt="profile"
+                  className="w-full h-full text-center object-cover object-center"
+                  width={500}
+                  height={500}
+                />
+              )}
             </div>
           </div>
         </div>
