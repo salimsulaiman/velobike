@@ -224,35 +224,38 @@ function Collection() {
           </div>
           <div className="overflow-x-scroll no-scrollbar whitespace-nowrap flex gap-2 md:hidden">
             <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
+              4 Stars
+            </button>
+            <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
+              New
+            </button>
+            <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
+              Cheapest
+            </button>
+            <button
+              className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center"
+              onClick={() => {
+                const modal = document.getElementById("filter") as HTMLDialogElement;
+                if (modal) {
+                  modal.showModal();
+                }
+              }}
+            >
               Type
               <span className="ms-[2px] mt-[2px]">
                 <FaAngleDown />
               </span>
             </button>
-            <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
-              Price
-              <span className="ms-[2px] mt-[2px]">
-                <FaAngleDown />
-              </span>
-            </button>
-            <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
-              Review
-              <span className="ms-[2px] mt-[2px]">
-                <FaAngleDown />
-              </span>
-            </button>
-            <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
-              Color
-              <span className="ms-[2px] mt-[2px]">
-                <FaAngleDown />
-              </span>
-            </button>
-            <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
-              Sort
-              <span className="ms-[2px] mt-[2px]">
-                <FaAngleDown />
-              </span>
-            </button>
+            <dialog id="filter" className="modal modal-bottom">
+              <div className="modal-box">
+                <form method="dialog">
+                  {/* if there is a button in form, it will close the modal */}
+                  <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+                <h3 className="font-bold text-lg">Filter</h3>
+                <p className="py-4">Choose your product type</p>
+              </div>
+            </dialog>
           </div>
           {/* end filter */}
           <h4 className="text-sm sm:text-xl text-curious-blue-600 font-bold uppercase relative z-10 mt-[32px]">

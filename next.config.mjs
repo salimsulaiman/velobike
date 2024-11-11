@@ -12,7 +12,14 @@ const nextConfig = {
         hostname: "utfs.io",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "api.dicebear.com",
+        pathname: "/**",
+      },
     ],
+    dangerouslyAllowSVG: true, // Enable SVG images from remote sources
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;", // Optional, for added security
   },
 };
 

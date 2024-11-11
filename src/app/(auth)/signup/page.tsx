@@ -5,20 +5,18 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { json } from "stream/consumers";
 
-function Signin() {
+function Signup() {
   const route = useRouter();
 
   const user = [
     {
       name: "Salim",
-      username: "salim",
       email: "salim@gmail.com",
       password: "salim",
       picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Salim",
     },
     {
       name: "Nurul",
-      username: "nurul",
       email: "nurul@gmail.com",
       password: "nurul",
       picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Nurul",
@@ -26,14 +24,15 @@ function Signin() {
   ];
 
   const [username, setUsername] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const findUser = user.find((items) => items.username === username && items.password === password);
+      const findUser = user.find((items) => items.email === email && items.password === password);
 
-      if (username === "" && password === "") {
+      if (email === "" && password === "") {
         return alert("Please fill email and password field");
       }
       if (!findUser) {
@@ -47,13 +46,13 @@ function Signin() {
   };
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-white px-6 lg:px-2">
-      <div className="w-full lg:w-5/6 xl:w-3/5 bg-white h-[650px] md:h-[700px] rounded-2xl shadow-premiere flex overflow-hidden">
+      <div className="w-full lg:w-5/6 xl:w-3/5 bg-white h-[700px] rounded-2xl shadow-premiere flex overflow-hidden">
         <div className="w-full md:w-1/2 h-full flex flex-col justify-center p-8 relative">
           <h3 className="text-slate-700 text-base absolute top-8 left-8">
             Velo<span className="font-bold">Bike</span>
           </h3>
-          <h1 className="text-slate-700 font-bold text-2xl">Login</h1>
-          <h4 className="text-slate-400 mt-4 text-sm md:text-base">Please login to continue to your account</h4>
+          <h1 className="text-slate-700 font-bold text-2xl">Register</h1>
+          <h4 className="text-slate-400 mt-4 text-sm md:text-base">Please register your account</h4>
           <form onSubmit={handleLogin} className="flex flex-col justify-center gap-4 mt-4">
             <div className="form-control">
               <div className="relative">
@@ -76,6 +75,24 @@ function Signin() {
             <div className="form-control">
               <div className="relative">
                 <input
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                  className="w-full border-2 border-slate-200 outline-transparent focus:border-transparent focus:outline-curious-blue-600 rounded-lg p-2 text-slate-700 peer focus:placeholder-transparent"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute left-2 -top-2 text-xs text-curious-blue-600 bg-white px-1 transition-all duration-300 transform scale-0 peer-focus:scale-100"
+                >
+                  Email
+                </label>
+              </div>
+            </div>
+            <div className="form-control">
+              <div className="relative">
+                <input
                   id="password"
                   type="password"
                   placeholder="Password"
@@ -91,14 +108,8 @@ function Signin() {
                 </label>
               </div>
             </div>
-            <div className="form-control">
-              <label className="label cursor-pointer w-fit gap-2">
-                <input type="checkbox" className="checkbox" />
-                <span className="label-text">Remember me</span>
-              </label>
-            </div>
             <button className="w-full bg-curious-blue-600 py-3 text-white rounded-lg hover:bg-curious-blue-700">
-              Login
+              Register
             </button>
             <div className="w-full relative my-4">
               <hr className="w-full" />
@@ -110,7 +121,7 @@ function Signin() {
               className="w-full bg-slate-50 py-3 text-slate-500 border-[1px] border-slate-400 rounded-lg hover:bg-slate-100 flex items-center justify-center gap-2"
               type="button"
             >
-              Login with Google
+              Register with Google
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 48 48">
                   <path
@@ -133,18 +144,18 @@ function Signin() {
               </span>
             </button>
             <h4 className="text-slate-400 text-center text-sm">
-              Need an account?{" "}
+              Have an account?{" "}
               <span>
-                <Link href={"/signup"} className="text-curious-blue-600 hover:text-curious-blue-700">
-                  Create one
+                <Link href={"/signin"} className="text-curious-blue-600 hover:text-curious-blue-700">
+                  Login
                 </Link>
               </span>
             </h4>
           </form>
         </div>
-        <div className="w-1/2 bg-curious-blue-600 rounded-l-2xl overflow-hidden relative hidden md:block ">
+        <div className="w-1/2 bg-yellow-500 rounded-l-2xl overflow-hidden relative hidden md:block ">
           <Image
-            src={"/assets/login-image.png"}
+            src={"/assets/signup-image.jpg"}
             width={1000}
             height={1000}
             alt="login-image"
@@ -157,4 +168,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default Signup;
