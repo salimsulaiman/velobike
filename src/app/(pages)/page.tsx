@@ -8,10 +8,8 @@ import { MdDirectionsBike } from "react-icons/md";
 import { ImPriceTags } from "react-icons/im";
 import { FaStar } from "react-icons/fa";
 import ProductCard from "../component/ProductCard";
-import { useRouter } from "next/navigation";
 
 function Home() {
-  const route = useRouter();
   const [currentItem, setCurrentItem] = useState(0); // State to track active carousel item
 
   // useEffect(() => {
