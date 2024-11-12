@@ -237,8 +237,8 @@ function Navbar() {
             </h2>
           </div>
           <div
-            className={`absolute xmd:static bg-white min-h-[35vh] xmd:min-h-fit -mt-6 ${
-              toggleMenu ? "top-[100%] opacity-100" : "-top-[350px] opacity-0"
+            className={`absolute xmd:static bg-white min-h-[45vh] xmd:min-h-fit -mt-6 ${
+              toggleMenu ? "top-[100%] opacity-100" : "-top-[100%] opacity-0"
             } w-full xmd:w-auto flex items-center px-5 left-0 right-0 transition-all duration-200 ease-in-out -z-10 rounded-b-2xl shadow-xl`}
           >
             <ul className="flex flex-col xmd:flex-row items-start xmd:items-center gap-0 xmd:gap-[4vw] w-full xmd:w-fit">
@@ -289,16 +289,30 @@ function Navbar() {
             <Link href={"/"}>
               <MdShoppingCart className="text-2xl text-slate-600 hover:text-slate-700" />
             </Link>
-            <div className="w-10 h-w-10 rounded-full border-2 border-slate-400 overflow-hidden">
-              {data?.picture && (
-                <Image
-                  src={data.picture}
-                  alt="profile"
-                  className="w-full h-full text-center object-cover object-center"
-                  width={500}
-                  height={500}
-                />
-              )}
+            <div className="dropdown dropdown-end">
+              <div
+                className="w-12 h-12 rounded-full bg-porcelain-100 flex items-center justify-center overflow-hidden"
+                role="button"
+                tabIndex={0}
+              >
+                {data?.picture && (
+                  <Image
+                    src={data.picture}
+                    alt="profile"
+                    className="w-full h-full text-center object-cover object-center"
+                    width={500}
+                    height={500}
+                  />
+                )}
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow mt-4">
+                <li>
+                  <Link href={"/"}>Account</Link>
+                </li>
+                <li>
+                  <h4 onClick={handleLogout}>Logout</h4>
+                </li>
+              </ul>
             </div>
           </div>
         </div>

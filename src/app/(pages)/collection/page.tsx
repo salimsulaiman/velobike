@@ -222,7 +222,7 @@ function Collection() {
               </ul>
             </div>
           </div>
-          <div className="overflow-x-scroll no-scrollbar whitespace-nowrap flex gap-2 md:hidden">
+          <div className="overflow-x-scroll no-scrollbar whitespace-nowrap flex gap-2 md:hidden  bg-white pt-1 pb-3 w-screen -mx-6 px-6">
             <button className="text-woodsmoke-950 text-sm px-[12px] py-[7px] bg-black-haze-100 hover:bg-black-haze-200 rounded-full flex items-center">
               4 Stars
             </button>
@@ -252,9 +252,116 @@ function Collection() {
                   {/* if there is a button in form, it will close the modal */}
                   <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
-                <h3 className="font-bold text-lg">Filter</h3>
-                <p className="py-4">Choose your product type</p>
+                <h3 className="font-bold text-xl text-slate-700 pb-4">Filter</h3>
+                <div className="w-full overflow-y-scroll h-[400px] no-scrollbar">
+                  {/* price */}
+                  <div className="w-full mt-4 mb-8">
+                    <h4 className="text-lg text-slate-700 font-bold">Price</h4>
+                    <div className="flex w-full gap-4 mt-4">
+                      <div className="form-control w-1/2">
+                        <div className="relative">
+                          <input
+                            id="min"
+                            type="number"
+                            placeholder="Min"
+                            className="w-full border-2 border-slate-200 outline-transparent focus:border-transparent focus:outline-curious-blue-600 rounded-lg p-2 text-slate-700 peer focus:placeholder-transparent"
+                          />
+                          <label
+                            htmlFor="min"
+                            className="absolute left-2 -top-2 text-xs text-curious-blue-600 bg-white px-1 transition-all duration-300 transform scale-0 peer-focus:scale-100"
+                          >
+                            Min
+                          </label>
+                        </div>
+                      </div>
+                      <div className="form-control w-1/2">
+                        <div className="relative">
+                          <input
+                            id="max"
+                            type="number"
+                            placeholder="Max"
+                            className="w-full border-2 border-slate-200 outline-transparent focus:border-transparent focus:outline-curious-blue-600 rounded-lg p-2 text-slate-700 peer focus:placeholder-transparent"
+                          />
+                          <label
+                            htmlFor="max"
+                            className="absolute left-2 -top-2 text-xs text-curious-blue-600 bg-white px-1 transition-all duration-300 transform scale-0 peer-focus:scale-100"
+                          >
+                            Max
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap w-full gap-2 mt-4">
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        IDR 1M - IDR 5M
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        IDR 5M - IDR 10M
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        IDR 10M - IDR 20M
+                      </div>
+                    </div>
+                  </div>
+                  {/* rating */}
+                  <div className="w-full my-8">
+                    <h4 className="text-lg text-slate-700 font-bold">Rating</h4>
+                    <div className="flex flex-wrap w-full gap-2 mt-4">
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        5 Stars
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        4 Stars
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        3 Stars
+                      </div>
+                    </div>
+                  </div>
+                  {/* category */}
+                  <div className="w-full my-8">
+                    <h4 className="text-lg text-slate-700 font-bold">Type</h4>
+                    <div className="flex flex-wrap w-full gap-2 mt-4">
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Bikes
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Accessories
+                      </div>
+                    </div>
+                  </div>
+                  {/* variant */}
+                  <div className="w-full my-8">
+                    <h4 className="text-lg text-slate-700 font-bold">Variant</h4>
+                    <div className="flex flex-wrap w-full gap-2 mt-4">
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Mountaine Bike
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Fixie Bike
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Road Bike
+                      </div>
+                    </div>
+                  </div>
+                  {/* sort */}
+                  <div className="w-full mt-8 mb-4">
+                    <h4 className="text-lg text-slate-700 font-bold">Sort</h4>
+                    <div className="flex flex-wrap w-full gap-2 mt-4">
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Newest
+                      </div>
+                      <div className="w-fit py-2 px-4 rounded-full bg-black-haze-100 focus:bg-black-haze-200">
+                        Oldest
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+              <form method="dialog" className="modal-backdrop">
+                <button>close</button>
+              </form>
             </dialog>
           </div>
           {/* end filter */}

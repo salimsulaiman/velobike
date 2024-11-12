@@ -30,7 +30,9 @@ function Signin() {
     e.preventDefault();
 
     try {
-      const findUser = user.find((items) => items.username === username && items.password === password);
+      const findUser = user.find(
+        (items) => (items.username === username || items.email === username) && items.password === password
+      );
 
       if (username === "" && password === "") {
         return alert("Please fill email and password field");
@@ -46,9 +48,9 @@ function Signin() {
   };
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-white px-6 lg:px-2">
-      <div className="w-full lg:w-5/6 xl:w-3/5 bg-white h-[650px] md:h-[700px] rounded-2xl shadow-premiere flex overflow-hidden">
+      <div className="w-[907px] min-h-[470px] bg-white rounded-2xl shadow-premiere flex overflow-hidden">
         <div className="w-full md:w-1/2 h-full flex flex-col justify-center p-8 relative">
-          <h3 className="text-slate-700 text-base absolute top-8 left-8">
+          <h3 className="text-slate-700 text-sm mb-4">
             Velo<span className="font-bold">Bike</span>
           </h3>
           <h1 className="text-slate-700 font-bold text-2xl">Login</h1>
@@ -141,7 +143,7 @@ function Signin() {
             </h4>
           </form>
         </div>
-        <div className="w-1/2 bg-curious-blue-600 rounded-l-2xl overflow-hidden relative hidden md:block ">
+        <div className="w-1/2 bg-curious-blue-600 rounded-xl overflow-hidden relative hidden md:block my-4 me-4">
           <Image
             src={"/assets/login-image.png"}
             width={1000}
