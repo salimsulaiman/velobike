@@ -22,6 +22,7 @@ function Signup() {
     },
   ];
 
+  const [fullname, setFullname] = useState<string>("");
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -45,14 +46,32 @@ function Signup() {
   };
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-white px-6 lg:px-2">
-      <div className="w-full lg:w-5/6 xl:w-3/5 bg-white h-[700px] rounded-2xl shadow-premiere flex overflow-hidden">
+      <div className="w-[907px] min-h-[470px] bg-white rounded-2xl shadow-premiere flex overflow-hidden">
         <div className="w-full md:w-1/2 h-full flex flex-col justify-center p-8 relative">
-          <h3 className="text-slate-700 text-base absolute top-8 left-8">
+          <h3 className="text-slate-700 text-sm mb-4">
             Velo<span className="font-bold">Bike</span>
           </h3>
           <h1 className="text-slate-700 font-bold text-2xl">Register</h1>
           <h4 className="text-slate-400 mt-4 text-sm md:text-base">Please register your account</h4>
           <form onSubmit={handleLogin} className="flex flex-col justify-center gap-4 mt-4">
+            <div className="form-control">
+              <div className="relative">
+                <input
+                  id="fullname"
+                  type="text"
+                  placeholder="Fullname"
+                  className="w-full border-2 border-slate-200 outline-transparent focus:border-transparent focus:outline-curious-blue-600 rounded-lg p-2 text-slate-700 peer focus:placeholder-transparent"
+                  onChange={(e) => setFullname(e.target.value)}
+                  value={fullname}
+                />
+                <label
+                  htmlFor="fullname"
+                  className="absolute left-2 -top-2 text-xs text-curious-blue-600 bg-white px-1 transition-all duration-300 transform scale-0 peer-focus:scale-100"
+                >
+                  Fullname
+                </label>
+              </div>
+            </div>
             <div className="form-control">
               <div className="relative">
                 <input
@@ -152,7 +171,7 @@ function Signup() {
             </h4>
           </form>
         </div>
-        <div className="w-1/2 bg-yellow-500 rounded-l-2xl overflow-hidden relative hidden md:block ">
+        <div className="w-1/2 bg-curious-blue-600 rounded-xl overflow-hidden relative hidden md:block my-4 me-4">
           <Image
             src={"/assets/signup-image.jpg"}
             width={1000}
