@@ -9,15 +9,15 @@ function Signin() {
 
   const user = [
     {
-      name: "Salim",
-      username: "salim",
+      name: "Salim Sulaiman",
+      username: "salimsulaiman",
       email: "salim@gmail.com",
       password: "salim",
       picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Salim",
     },
     {
-      name: "Nurul",
-      username: "nurul",
+      name: "Nurul Ismawati",
+      username: "nurulisma",
       email: "nurul@gmail.com",
       password: "nurul",
       picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Nurul",

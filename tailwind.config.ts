@@ -32,6 +32,10 @@ const config: Config = {
         "bombay-500": "#9095a1",
         "zumthor-100": "#E2E8F0",
         "link-water-200": "#CBD5E1",
+        "gallery-100": "#EFEFEF",
+        "black-haze-50": "#F7F8FA",
+        "athens-gray-50": "#F1F5F9",
+        "athens-gray-100": "#e9eff5",
       },
       backgroundImage: {
         footer: "url('/assets/footer-background.png')",
