@@ -14,7 +14,7 @@ interface UserData {
   picture: string;
 }
 
-function page() {
+function AccountPage() {
   const [data, setData] = useState<UserData | undefined>(undefined);
 
   useEffect(() => {
@@ -200,4 +200,4 @@ function page() {
   );
 }
 
-export default page;
+export default AccountPage;
