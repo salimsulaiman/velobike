@@ -162,7 +162,7 @@ function Navbar() {
             </div>
             <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow mt-4">
               <li>
-                <Link href={"/"}>Account</Link>
+                <Link href={"/account"}>Account</Link>
               </li>
               <li>
                 <h4 onClick={handleLogout}>Logout</h4>
@@ -307,7 +307,7 @@ function Navbar() {
               </div>
               <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow mt-4">
                 <li>
-                  <Link href={"/"}>Account</Link>
+                  <Link href={"/account"}>Account</Link>
                 </li>
                 <li>
                   <h4 onClick={handleLogout}>Logout</h4>
