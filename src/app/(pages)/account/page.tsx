@@ -388,14 +388,14 @@ function AccountPage() {
                                       id="name"
                                       type="text"
                                       autoComplete="false"
-                                      placeholder="Recipient's name"
+                                      placeholder="Recipients name"
                                       className="w-full border-2 border-slate-200 outline-transparent focus:border-transparent focus:outline-curious-blue-600 rounded-lg p-2 text-slate-700 peer focus:placeholder-transparent"
                                     />
                                     <label
                                       htmlFor="name"
                                       className="absolute left-2 -top-2 text-xs text-curious-blue-600 bg-white px-1 transition-all duration-300 transform scale-0 peer-focus:scale-100"
                                     >
-                                      Recipient's name
+                                      Recipients name
                                     </label>
                                   </div>
                                 </div>
