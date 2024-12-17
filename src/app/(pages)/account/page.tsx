@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { DiVim } from "react-icons/di";
 import { FiMapPin, FiSearch, FiUser } from "react-icons/fi";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { MdFavoriteBorder, MdOutlineShoppingCart } from "react-icons/md";
@@ -28,7 +27,7 @@ function AccountPage() {
   const steps = [0, 1, 2];
   const [currentStep, setCurrentStep] = useState(0);
 
-  const [addAddress, setAddAddress] = useState("find");
+  const [addAddress] = useState("find");
 
   const handleNext = () => {
     if (currentStep < steps.length - 1) setCurrentStep((prev) => prev + 1);
