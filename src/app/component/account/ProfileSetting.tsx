@@ -142,7 +142,7 @@ function ProfileSetting() {
                 <h4 className="text-base text-big-stone-950 font-medium mb-1">Salim Sulaiman</h4>
                 <h5 className="text-[12px] text-big-stone-950 mb-1">+6287776421079</h5>
                 <h5 className="text-[12px] text-big-stone-950 leading-loose mb-2">
-                  Jl. Gotong Royong, RT 04 RW 04 No 10, Balapulang Wetan, Kec. Balapulang, Kab. Tegal
+                  Jl. Royong Gotong, Balapulang Wetan, Kec. Balapulang, Kab. Tegal
                 </h5>
                 <div className="flex gap-[5px] items-center text-curious-blue-600 mb-2">
                   <RiMapPin2Fill />
