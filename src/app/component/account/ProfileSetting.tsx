@@ -25,8 +25,6 @@ function ProfileSetting() {
   const steps = [0, 1, 2];
   const [currentStep, setCurrentStep] = useState(0);
 
-  const [addAddress] = useState("find");
-
   const handleNext = () => {
     if (currentStep < steps.length - 1) setCurrentStep((prev) => prev + 1);
   };
@@ -47,23 +45,6 @@ function ProfileSetting() {
     }, 3000);
     setToast(true);
   };
-
-  // const handleAddress = (pagination: string) => {
-  //   switch (pagination) {
-  //     case "find":
-  //       setAddAddress("find");
-  //       break;
-  //     case "pin":
-  //       setAddAddress("pin");
-  //       break;
-  //     case "fill":
-  //       setAddAddress("fill");
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-  // };
 
   useEffect(() => {
     const userData = localStorage.getItem("user");
