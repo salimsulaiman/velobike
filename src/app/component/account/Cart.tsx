@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Cart() {
-  const steps = [0, 1, 2];
+  // const steps = [0, 1, 2];
   const [currentStep, setCurrentStep] = useState(0);
   return (
     <>
