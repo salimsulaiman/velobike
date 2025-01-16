@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Cart() {
   // const steps = [0, 1, 2];
-  const [currentStep, setCurrentStep] = useState(0);
+  const [currentStep] = useState(0);
   return (
     <>
       <div className="w-full px-[21px] py-[40px]">

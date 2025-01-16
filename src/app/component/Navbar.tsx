@@ -9,6 +9,7 @@ import { MdDirectionsBike, MdShoppingCart } from "react-icons/md";
 
 interface UserData {
   name: string;
+  username: string;
   email: string;
   password: string;
   picture: string;
@@ -55,7 +56,13 @@ function Navbar() {
     if (userData) {
       setData(JSON.parse(userData)); // Parse if you stored the data as JSON
     } else {
-      setData(undefined); // Or set a default value that matches your state type
+      setData({
+        name: "Salim Sulaiman",
+        username: "salimsulaiman",
+        email: "salim@gmail.com",
+        password: "salim",
+        picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Salim",
+      }); // Or set a default value that matches your state type
     }
   }, []);
   return (
@@ -66,7 +73,11 @@ function Navbar() {
             scrolling ? "bg-black/40 backdrop-blur-lg" : "bg-white"
           } shadow-premiere transition-all duration-300 ease-in-out`}
         >
-          <h2 className={`hidden lg:block text-lg lg:text-xl ${scrolling ? "text-white" : "text-slate-800"}`}>
+          <h2
+            className={`hidden lg:block text-lg lg:text-xl ${
+              scrolling ? "text-white" : "text-slate-800"
+            }`}
+          >
             Velo<span className="font-bold">Bike</span>
           </h2>
           <div className="w-12 h-12 rounded-full bg-white flex lg:hidden items-center justify-center overflow-hidden">
@@ -82,7 +93,9 @@ function Navbar() {
             <li>
               <Link
                 className={`${
-                  pathname === "/" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+                  pathname === "/"
+                    ? "bg-curious-blue-600 text-white"
+                    : "bg-porcelain-100 text-slate-800"
                 } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block text-sm lg:text-base`}
                 href={"/"}
               >
@@ -104,7 +117,9 @@ function Navbar() {
             <li>
               <Link
                 className={`${
-                  pathname === "/sale" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+                  pathname === "/sale"
+                    ? "bg-curious-blue-600 text-white"
+                    : "bg-porcelain-100 text-slate-800"
                 } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block text-sm lg:text-base`}
                 href={"/"}
               >
@@ -114,7 +129,9 @@ function Navbar() {
             <li>
               <Link
                 className={`${
-                  pathname === "/articles" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+                  pathname === "/articles"
+                    ? "bg-curious-blue-600 text-white"
+                    : "bg-porcelain-100 text-slate-800"
                 } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block text-sm lg:text-base`}
                 href={"/"}
               >
@@ -124,7 +141,9 @@ function Navbar() {
             <li>
               <Link
                 className={`${
-                  pathname === "/support" ? "bg-curious-blue-600 text-white" : "bg-porcelain-100 text-slate-800"
+                  pathname === "/support"
+                    ? "bg-curious-blue-600 text-white"
+                    : "bg-porcelain-100 text-slate-800"
                 } transition-all duration-300 ease-in-out rounded-full px-[25px] py-[14px] inline-block text-sm lg:text-base`}
                 href={"/"}
               >
@@ -160,7 +179,10 @@ function Navbar() {
                 />
               )}
             </div>
-            <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow mt-4">
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow mt-4"
+            >
               <li>
                 <Link href={"/account"}>Account</Link>
               </li>
@@ -305,7 +327,10 @@ function Navbar() {
                   />
                 )}
               </div>
-              <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow mt-4">
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[100] w-52 p-2 shadow mt-4"
+              >
                 <li>
                   <Link href={"/account"}>Account</Link>
                 </li>
