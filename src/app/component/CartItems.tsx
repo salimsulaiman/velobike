@@ -2,7 +2,18 @@ import React, { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import ProgressiveImage from "./ProgressiveImage";
 
-function CartItems() {
+type CartItem = {
+  name: string;
+  type: string;
+  variant: string;
+  price: number;
+  image: string;
+};
+
+function CartItems({ name, type, variant, price, image }: CartItem) {
+  const formatPrice = (price: number): string => {
+    return new Intl.NumberFormat("id-ID").format(price);
+  };
   const [counter, setCounter] = useState(1);
 
   const increment = () => {
@@ -26,7 +37,7 @@ function CartItems() {
           </div>
           <div className="w-[115px] h-[115px] rounded-[8px] bg-slate-100 relative p-2">
             <ProgressiveImage
-              src={"/assets/product/FELT-fixie.png"}
+              src={image}
               alt={"FELT-fixie"}
               width={500}
               height={500}
@@ -42,18 +53,18 @@ function CartItems() {
               <h5 className="text-slate-800 text-xs px-3 border-[1px] border-slate-800 rounded-full text-center inline-block w-auto">
                 Bike
               </h5>
-              <h4 className="text-slate-800 text-base">FELT Bike</h4>
+              <h4 className="text-slate-800 text-base">{name}</h4>
               <div className="flex gap-2">
                 <h5 className="text-bombay-400 text-xs">
-                  Type: <span className="text-slate-800">Fixie Bike</span>
+                  Type: <span className="text-slate-800">{type}</span>
                 </h5>
                 <h5 className="text-bombay-400 text-xs">
-                  Variant: <span className="text-slate-800">Cyan</span>
+                  Variant: <span className="text-slate-800">{variant}</span>
                 </h5>
               </div>
             </div>
             <h5 className="text-bombay-400 text-base font-bold">
-              IDR <span className="text-slate-800">6.750.000</span>
+              IDR <span className="text-slate-800">{formatPrice(price)}</span>
             </h5>
           </div>
         </div>

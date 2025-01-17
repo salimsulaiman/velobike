@@ -43,7 +43,7 @@ const ProgressiveImage: React.FC<ProgressiveImageProps> = ({
         placeholder="blur"
         blurDataURL={src} // Optional: Update this if you have an actual blurDataURL
       />
-      {isLoading && <div className="absolute inset-0 bg-gray-200 animate-pulse"></div>}
+      {isLoading && <div className="absolute inset-0 animate-pulse"></div>}
     </div>
   );
 };

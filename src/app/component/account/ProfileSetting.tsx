@@ -58,13 +58,17 @@ function ProfileSetting() {
   return (
     <>
       <div className="w-full px-[21px] py-[40px]">
-        <h2 className="text-2xl font-medium text-big-stone-950 mb-3">Profile</h2>
+        <h2 className="text-2xl font-medium text-big-stone-950 mb-3">
+          Profile
+        </h2>
         <div className="flex flex-col w-full">
           {/* photo */}
           <div className="flex w-full mb-3">
             <div className="w-4/12">
               <h4 className="text-sm text-big-stone-950">Your Photo</h4>
-              <h5 className="text-[10px] text-slate-500">This will be displayed on your profile</h5>
+              <h5 className="text-[10px] text-slate-500">
+                This will be displayed on your profile
+              </h5>
             </div>
             <div className="w-8/12 flex items-center gap-3">
               <div className="w-[51px] h-[51px] rounded-full bg-slate-500 overflow-hidden">
@@ -78,7 +82,9 @@ function ProfileSetting() {
                   />
                 )}
               </div>
-              <h4 className="text-sm text-slate-500 cursor-pointer hover:text-slate-600">Delete</h4>
+              <h4 className="text-sm text-slate-500 cursor-pointer hover:text-slate-600">
+                Delete
+              </h4>
               <h4 className="text-sm text-curious-blue-600 font-semibold cursor-pointer hover:text-curious-blue-700">
                 Update
               </h4>
@@ -89,36 +95,45 @@ function ProfileSetting() {
           {/* field */}
           <form action="">
             <div className="flex w-full items-center mb-5">
-              <label className="text-sm text-big-stone-950 w-4/12" htmlFor="fullname">
+              <label
+                className="text-sm text-big-stone-950 w-4/12"
+                htmlFor="fullname"
+              >
                 Fullname
               </label>
               <input
                 id="fullname"
                 type="text"
                 className="w-full border-[1px] border-slate-300 max-w-[369px] rounded-[7px] py-[5px] px-[11px] text-sm"
-                value={data?.name}
+                defaultValue={data?.name}
               />
             </div>
             <div className="flex w-full items-center mb-5">
-              <label className="text-sm text-big-stone-950 w-4/12" htmlFor="username">
+              <label
+                className="text-sm text-big-stone-950 w-4/12"
+                htmlFor="username"
+              >
                 Username
               </label>
               <input
                 id="username"
                 type="text"
                 className="w-full border-[1px] border-slate-300 max-w-[369px] rounded-[7px] py-[5px] px-[11px] text-sm"
-                value={data?.username}
+                defaultValue={data?.username}
               />
             </div>
             <div className="flex w-full items-center mb-1">
-              <label className="text-sm text-big-stone-950 w-4/12" htmlFor="email">
+              <label
+                className="text-sm text-big-stone-950 w-4/12"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
                 id="email"
                 type="email"
                 className="w-full border-[1px] border-slate-300 max-w-[369px] rounded-[7px] py-[5px] px-[11px] text-sm"
-                value={data?.email}
+                defaultValue={data?.email}
               />
             </div>
             {/* <button className="text-white text-sm px-4 py-2 bg-curious-blue-600 rounded-full">Save</button> */}
@@ -128,21 +143,30 @@ function ProfileSetting() {
           <div className="flex w-full mb-3">
             <div className="w-4/12">
               <h4 className="text-sm text-big-stone-950">Address</h4>
-              <h5 className="text-[10px] text-slate-500">The address will be used for shipping</h5>
+              <h5 className="text-[10px] text-slate-500">
+                The address will be used for shipping
+              </h5>
             </div>
             <div className="max-w-[369px]">
               <div className="p-3 border-[1px] border-slate-300 rounded-[7px] w-full mb-3 relative">
                 <div className="w-1 h-[21px] bg-curious-blue-600 absolute left-0 top-3 rounded-r-[6px]"></div>
                 <div className="flex gap-1 items-center mb-1">
-                  <h5 className="text-[10px] font-medium text-big-stone-950">House</h5>
+                  <h5 className="text-[10px] font-medium text-big-stone-950">
+                    House
+                  </h5>
                   <h5 className="text-[10px] font-medium text-slate-600 px-[5px] py-[2px] rounded-[4px] bg-zumthor-100">
                     Primary
                   </h5>
                 </div>
-                <h4 className="text-base text-big-stone-950 font-medium mb-1">Salim Sulaiman</h4>
-                <h5 className="text-[12px] text-big-stone-950 mb-1">+6287776421079</h5>
+                <h4 className="text-base text-big-stone-950 font-medium mb-1">
+                  Salim Sulaiman
+                </h4>
+                <h5 className="text-[12px] text-big-stone-950 mb-1">
+                  +6287776421079
+                </h5>
                 <h5 className="text-[12px] text-big-stone-950 leading-loose mb-2">
-                  Jl. Royong Gotong, Balapulang Wetan, Kec. Balapulang, Kab. Tegal
+                  Jl. Royong Gotong, Balapulang Wetan, Kec. Balapulang, Kab.
+                  Tegal
                 </h5>
                 <div className="flex gap-[5px] items-center text-curious-blue-600 mb-2">
                   <RiMapPin2Fill />
@@ -166,7 +190,9 @@ function ProfileSetting() {
               <button
                 className="text-white text-sm px-4 py-[6px] bg-curious-blue-600 rounded-full hover:bg-curious-blue-700"
                 onClick={() => {
-                  const modal = document.getElementById("addAddress") as HTMLDialogElement;
+                  const modal = document.getElementById(
+                    "addAddress"
+                  ) as HTMLDialogElement;
                   if (modal) {
                     modal.showModal();
                     setCurrentStep(0);
@@ -175,48 +201,91 @@ function ProfileSetting() {
               >
                 Add Address +
               </button>
-              <dialog id="addAddress" className="modal modal-bottom sm:modal-middle">
+              <dialog
+                id="addAddress"
+                className="modal modal-bottom sm:modal-middle"
+              >
                 <div className="modal-box">
-                  <h3 className="font-semibold text-lg text-slate-700 mb-8 text-center">Add Address</h3>
+                  <h3 className="font-semibold text-lg text-slate-700 mb-8 text-center">
+                    Add Address
+                  </h3>
                   <div className="w-full">
                     <div className="grid grid-cols-5 items-center relative max-w-[350px] mx-auto">
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className={`rounded-full h-7 w-7 ${
-                            currentStep == 0 ? "bg-curious-blue-600" : "bg-white border-2 border-curious-blue-600"
+                            currentStep == 0
+                              ? "bg-curious-blue-600"
+                              : "bg-white border-2 border-curious-blue-600"
                           } flex items-center justify-center`}
                         >
-                          <div className={`${currentStep == 0 ? "text-white" : "text-curious-blue-600"}`}>1</div>
+                          <div
+                            className={`${
+                              currentStep == 0
+                                ? "text-white"
+                                : "text-curious-blue-600"
+                            }`}
+                          >
+                            1
+                          </div>
                         </div>
-                        <div className="text-[10px] text-center mt-1">Find location</div>
+                        <div className="text-[10px] text-center mt-1">
+                          Find location
+                        </div>
                       </div>
                       <div className="w-full h-[1px] bg-slate-400 rounded-full"></div>
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className={`rounded-full h-7 w-7 ${
-                            currentStep == 1 ? "bg-curious-blue-600" : "bg-white border-2 border-curious-blue-600"
+                            currentStep == 1
+                              ? "bg-curious-blue-600"
+                              : "bg-white border-2 border-curious-blue-600"
                           } flex items-center justify-center`}
                         >
-                          <div className={`${currentStep == 1 ? "text-white" : "text-curious-blue-600"}`}>2</div>
+                          <div
+                            className={`${
+                              currentStep == 1
+                                ? "text-white"
+                                : "text-curious-blue-600"
+                            }`}
+                          >
+                            2
+                          </div>
                         </div>
-                        <div className="text-[10px] text-center mt-1">Pin location</div>
+                        <div className="text-[10px] text-center mt-1">
+                          Pin location
+                        </div>
                       </div>
                       <div className="w-full h-[1px] bg-slate-400 rounded-full"></div>
                       <div className="flex flex-col items-center gap-1">
                         <div
                           className={`rounded-full h-7 w-7 ${
-                            currentStep == 2 ? "bg-curious-blue-600" : "bg-white border-2 border-curious-blue-600"
+                            currentStep == 2
+                              ? "bg-curious-blue-600"
+                              : "bg-white border-2 border-curious-blue-600"
                           } flex items-center justify-center`}
                         >
-                          <div className={`${currentStep == 2 ? "text-white" : "text-curious-blue-600"}`}>3</div>
+                          <div
+                            className={`${
+                              currentStep == 2
+                                ? "text-white"
+                                : "text-curious-blue-600"
+                            }`}
+                          >
+                            3
+                          </div>
                         </div>
-                        <div className="text-[10px] text-center mt-1">Fill Detail</div>
+                        <div className="text-[10px] text-center mt-1">
+                          Fill Detail
+                        </div>
                       </div>
                     </div>
                     <hr className="my-8" />
                     {currentStep == 0 && (
                       <div className="w-full">
-                        <h4 className="text-big-stone-950 mb-4">Where is your shipping location?</h4>
+                        <h4 className="text-big-stone-950 mb-4">
+                          Where is your shipping location?
+                        </h4>
                         <form action="" className="w-full">
                           <label className="input input-bordered border-curious-blue-600 focus:ring-curious-blue-600 focus:outline-curious-blue-600 flex items-center gap-2">
                             <FiSearch className="text-slate-500" />
@@ -233,7 +302,10 @@ function ProfileSetting() {
                         </button>
                         <h4 className="text-slate-500 text-sm mt-4">
                           Not found?, fill in the address{" "}
-                          <Link href={"#"} className="text-curious-blue-600 hover:text-curious-blue-700">
+                          <Link
+                            href={"#"}
+                            className="text-curious-blue-600 hover:text-curious-blue-700"
+                          >
                             manually
                           </Link>
                         </h4>
@@ -241,7 +313,9 @@ function ProfileSetting() {
                     )}
                     {currentStep == 1 && (
                       <div className="w-full">
-                        <h4 className="text-big-stone-950 mb-4">Determine the pinpoint of your location</h4>
+                        <h4 className="text-big-stone-950 mb-4">
+                          Determine the pinpoint of your location
+                        </h4>
                         <iframe
                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.65027504472!2d109.09731577475831!3d-7.050317692951927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f95e6db6550a1%3A0xabfb48b6456fea26!2sJl.%20Gotong%20Royong%2C%20Kec.%20Balapulang%2C%20Kabupaten%20Tegal%2C%20Jawa%20Tengah%2052464!5e0!3m2!1sen!2sid!4v1733989224887!5m2!1sen!2sid"
                           width="600"
@@ -252,8 +326,12 @@ function ProfileSetting() {
                           className="w-full h-[150px] rounded-t-[7px] border-none outline-none"
                         ></iframe>
                         <div className="w-full p-4 flex flex-col border-2 rounded-b-[7px]">
-                          <h4 className="text-base text-big-stone-950 mb-1">Balapulang Wetan</h4>
-                          <h5 className="text-sm text-slate-500">Balapulang, Kab. Tegal, Jawa Tengah</h5>
+                          <h4 className="text-base text-big-stone-950 mb-1">
+                            Balapulang Wetan
+                          </h4>
+                          <h5 className="text-sm text-slate-500">
+                            Balapulang, Kab. Tegal, Jawa Tengah
+                          </h5>
                         </div>
                         <button className="flex gap-4 w-full mt-4 items-center bg-curious-blue-600 px-4 py-2 text-white rounded-full hover:bg-curious-blue-700">
                           <FiMapPin />
@@ -263,10 +341,16 @@ function ProfileSetting() {
                     )}
                     {currentStep == 2 && (
                       <div className="w-full">
-                        <h4 className="text-big-stone-950 mb-4">Complete the detailed address</h4>
+                        <h4 className="text-big-stone-950 mb-4">
+                          Complete the detailed address
+                        </h4>
                         <div className="w-full p-4 flex flex-col border-2 rounded-[7px]">
-                          <h4 className="text-base text-big-stone-950 mb-1">Balapulang Wetan</h4>
-                          <h5 className="text-sm text-slate-500">Balapulang, Kab. Tegal, Jawa Tengah</h5>
+                          <h4 className="text-base text-big-stone-950 mb-1">
+                            Balapulang Wetan
+                          </h4>
+                          <h5 className="text-sm text-slate-500">
+                            Balapulang, Kab. Tegal, Jawa Tengah
+                          </h5>
                         </div>
                         <form action="">
                           <div className="form-control">
@@ -315,7 +399,8 @@ function ProfileSetting() {
                                 Courier note
                               </label>
                               <h4 className="text-slate-500 text-xs mt-1">
-                                House color, landmarks, special instructions, etc.
+                                House color, landmarks, special instructions,
+                                etc.
                               </h4>
                             </div>
                           </div>
@@ -362,7 +447,8 @@ function ProfileSetting() {
                                 onChange={handleCheckboxChange}
                               />
                               <span className="text-xs">
-                                I agree to the Terms & Conditions and Privacy Policy for address settings on Tokopedia.
+                                I agree to the Terms & Conditions and Privacy
+                                Policy for address settings on Tokopedia.
                               </span>
                             </label>
                           </div>
