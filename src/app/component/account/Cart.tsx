@@ -26,6 +26,10 @@ function Cart() {
     },
   ];
 
+  const formatPrice = (price: number): string => {
+    return new Intl.NumberFormat("id-ID").format(price);
+  };
+
   const handleClear = () => {
     setInputValue("");
   };
@@ -195,14 +199,19 @@ function Cart() {
               <div className="w-full p-4 bg-alabaster-100 rounded-[8px]">
                 <ul className="w-full">
                   <li className="text-xs text-slate-800">3 Items</li>
-                  <li className="text-xs text-slate-800 w-full flex justify-between my-2">
-                    <h5 className="text-bombay-400">1 x FELT Fixie</h5>
-                    <h5 className="text-slate-800 font-medium">6.750.000</h5>
-                  </li>
-                  <li className="text-xs text-slate-800 w-full flex justify-between my-2">
-                    <h5 className="text-bombay-400">1 x FELT Fixie</h5>
-                    <h5 className="text-slate-800 font-medium">6.750.000</h5>
-                  </li>
+                  {cartItems.map((items, index) => {
+                    return (
+                      <li
+                        className="text-xs text-slate-800 w-full flex justify-between my-2"
+                        key={index}
+                      >
+                        <h5 className="text-bombay-400">1 x {items?.name}</h5>
+                        <h5 className="text-slate-800 font-medium">
+                          {formatPrice(items?.price)}
+                        </h5>
+                      </li>
+                    );
+                  })}
                   {redeem && (
                     <li className="text-xs text-slate-800 w-full flex justify-between my-2">
                       <h5 className="text-bombay-400">Coupon Discount</h5>
