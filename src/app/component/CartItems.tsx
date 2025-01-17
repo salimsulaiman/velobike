@@ -1,31 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaTrash } from "react-icons/fa";
 import ProgressiveImage from "./ProgressiveImage";
 
 type CartItem = {
+  id: number;
   name: string;
   type: string;
   variant: string;
   price: number;
   image: string;
+  counter: number;
+  onDelete: (id: number) => void;
+  formatPrice: (price: number) => string;
+  onIncrement: (id: number) => void;
+  onDecrement: (id: number) => void;
 };
 
-function CartItems({ name, type, variant, price, image }: CartItem) {
-  const formatPrice = (price: number): string => {
-    return new Intl.NumberFormat("id-ID").format(price);
-  };
-  const [counter, setCounter] = useState(1);
-
-  const increment = () => {
-    setCounter(counter + 1);
-  };
-  const decrement = () => {
-    if (counter < 2) {
-      alert("item has been deleted");
-    } else {
-      setCounter(counter - 1);
-    }
-  };
+function CartItems({
+  id,
+  name,
+  type,
+  variant,
+  price,
+  image,
+  counter,
+  onDelete,
+  formatPrice,
+  onIncrement,
+  onDecrement,
+}: CartItem) {
   return (
     <>
       <div className="w-full py-6 flex justify-between">
@@ -70,13 +73,22 @@ function CartItems({ name, type, variant, price, image }: CartItem) {
         </div>
         <div className="flex h-full items-end">
           <div className="flex gap-4 items-center">
-            <FaTrash className="text-alto-100" />
+            <FaTrash
+              className="text-alto-100 cursor-pointer hover:text-slate-400"
+              onClick={() => onDelete(id)}
+            />
             <div className="flex bg-alabaster-100 border border-alto-100 px-2 py-[3px] gap-5 items-center rounded-[4px]">
-              <button className="text-slate-700" onClick={decrement}>
+              <button
+                className="text-slate-700"
+                onClick={() => onDecrement(id)}
+              >
                 -
               </button>
               <h5 className="text-slate-700 text-xs">{counter}</h5>
-              <button className="text-slate-700" onClick={increment}>
+              <button
+                className="text-slate-700"
+                onClick={() => onIncrement(id)}
+              >
                 +
               </button>
             </div>
