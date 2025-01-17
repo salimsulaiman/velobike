@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaTrash } from "react-icons/fa";
 import CartItems from "../CartItems";
 import { MdDiscount } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";

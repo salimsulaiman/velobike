@@ -3,16 +3,16 @@ import { FaTrash } from "react-icons/fa";
 import ProgressiveImage from "./ProgressiveImage";
 
 function CartItems() {
-  let [counter, setCounter] = useState(1);
+  const [counter, setCounter] = useState(1);
 
   const increment = () => {
-    setCounter((counter += 1));
+    setCounter(counter + 1);
   };
   const decrement = () => {
     if (counter < 2) {
       alert("item has been deleted");
     } else {
-      setCounter((counter -= 1));
+      setCounter(counter - 1);
     }
   };
   return (
