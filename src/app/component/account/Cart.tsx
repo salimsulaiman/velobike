@@ -140,6 +140,7 @@ function Cart() {
             {cartItems.map((items, index) => {
               return (
                 <CartItems
+                  key={index}
                   name={items?.name}
                   type={items?.type}
                   variant={items?.variant}
