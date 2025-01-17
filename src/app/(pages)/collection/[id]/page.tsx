@@ -93,7 +93,39 @@ function Detail() {
                     width={500}
                     height={500}
                     quality={20}
-                    className={"h-full w-full absolute object-cover object-center mx-auto"}
+                    className={
+                      "h-full w-full absolute object-cover object-center mx-auto"
+                    }
+                    loading="lazy"
+                  />
+                </SwiperSlide>
+                <SwiperSlide
+                  className={`bg-slate-100 rounded-xl aspect-square relative overflow-hidden cursor-pointer`}
+                >
+                  <ProgressiveImage
+                    src={"/assets/product/FELT-fixie.png"}
+                    alt={"FELT-fixie"}
+                    width={500}
+                    height={500}
+                    quality={20}
+                    className={
+                      "h-full w-full absolute object-cover object-center mx-auto"
+                    }
+                    loading="lazy"
+                  />
+                </SwiperSlide>
+                <SwiperSlide
+                  className={`bg-slate-100 rounded-xl aspect-square relative overflow-hidden cursor-pointer`}
+                >
+                  <ProgressiveImage
+                    src={"/assets/product/FELT-fixie.png"}
+                    alt={"FELT-fixie"}
+                    width={500}
+                    height={500}
+                    quality={20}
+                    className={
+                      "h-full w-full absolute object-cover object-center mx-auto"
+                    }
                     loading="lazy"
                   />
                 </SwiperSlide>
@@ -110,8 +142,12 @@ function Detail() {
               <h5 className="text-[14px] text-slate-500">FELT Fixie</h5>
             </div>
             <div className="w-full mt-[28px]">
-              <h1 className="text-slate-700 text-[32px] font-medium">FELT Fixie</h1>
-              <h4 className="text-slate-500 text-xl mt-4 md:mt-2">Fixie Bike</h4>
+              <h1 className="text-slate-700 text-[32px] font-medium">
+                FELT Fixie
+              </h1>
+              <h4 className="text-slate-500 text-xl mt-4 md:mt-2">
+                Fixie Bike
+              </h4>
               <div className="flex items-center mt-[18px] md:mt-[15px] gap-[11px]">
                 <div className="flex gap-[3px] text-[24px] items-center">
                   <FaStar className="text-sunflower-500" />
@@ -122,7 +158,9 @@ function Detail() {
                 </div>
                 <h4 className="text-slate-500">10 Reviews</h4>
               </div>
-              <h1 className="text-slate-700 text-3xl md:text-[40px] font-semibold mt-6 md:mt-[14px]">IDR 6.750.000</h1>
+              <h1 className="text-slate-700 text-3xl md:text-[40px] font-semibold mt-6 md:mt-[14px]">
+                IDR 6.750.000
+              </h1>
               <div className="flex items-center gap-[7px] mt-[14px]">
                 <h4 className="text-slate-700 font-medium">Color</h4>
                 <div className="h-[6px] w-[6px] rounded-full bg-bombay-400"></div>
@@ -165,7 +203,9 @@ function Detail() {
                 <button
                   className="text-white bg-curious-blue-600 hover:bg-curious-blue-700 rounded-[13px] w-full mt-0 md:mt-[38px] py-[10px] text-center font-semibold"
                   onClick={() => {
-                    const modal = document.getElementById("buyModal") as HTMLDialogElement;
+                    const modal = document.getElementById(
+                      "buyModal"
+                    ) as HTMLDialogElement;
                     if (modal) {
                       modal.showModal();
                     }
@@ -173,19 +213,30 @@ function Detail() {
                 >
                   Buy now
                 </button>
-                <dialog id="buyModal" className="modal modal-bottom sm:modal-middle">
+                <dialog
+                  id="buyModal"
+                  className="modal modal-bottom sm:modal-middle"
+                >
                   <div className="modal-box">
                     <h3 className="font-semibold text-lg text-slate-700">
-                      FELT Fixie - <span className="font-normal text-slate-500">Cyan Variant</span>
+                      FELT Fixie -{" "}
+                      <span className="font-normal text-slate-500">
+                        Cyan Variant
+                      </span>
                     </h3>
-                    <p className="py-4">Ready to own it? Click &quot;Buy&quot; to complete your purchase securely.</p>
+                    <p className="py-4">
+                      Ready to own it? Click &quot;Buy&quot; to complete your
+                      purchase securely.
+                    </p>
                     <div className="modal-action">
                       <form method="dialog" className="flex gap-4">
                         {/* if there is a button in form, it will close the modal */}
                         <button className="px-6 py-2 rounded-full bg-curious-blue-600 hover:bg-curious-blue-700 text-white">
                           Buy
                         </button>
-                        <button className="px-6 py-2 rounded-full btn text-slate-700">Close</button>
+                        <button className="px-6 py-2 rounded-full btn text-slate-700">
+                          Close
+                        </button>
                       </form>
                     </div>
                   </div>
@@ -201,7 +252,9 @@ function Detail() {
           <h3
             onClick={() => setActiveSection("description")}
             className={`cursor-pointer text-lg md:text-xl font-semibold ${
-              activeSection === "description" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
+              activeSection === "description"
+                ? "text-slate-700"
+                : "text-bombay-400 hover:text-bombay-500"
             }`}
           >
             Description
@@ -209,7 +262,9 @@ function Detail() {
           <h3
             onClick={() => setActiveSection("details")}
             className={`cursor-pointer text-lg md:text-xl font-semibold ${
-              activeSection === "details" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
+              activeSection === "details"
+                ? "text-slate-700"
+                : "text-bombay-400 hover:text-bombay-500"
             }`}
           >
             Details
@@ -217,7 +272,9 @@ function Detail() {
           <h3
             onClick={() => setActiveSection("reviews")}
             className={`cursor-pointer text-lg md:text-xl font-semibold ${
-              activeSection === "reviews" ? "text-slate-700" : "text-bombay-400 hover:text-bombay-500"
+              activeSection === "reviews"
+                ? "text-slate-700"
+                : "text-bombay-400 hover:text-bombay-500"
             }`}
           >
             Reviews
@@ -228,16 +285,22 @@ function Detail() {
             {activeSection == "description" && (
               <div className="w-full my-8 text-slate-500 description-product text-sm md:text-base text-justify">
                 <p>
-                  The FELT Fixie Bike is the perfect choice for urban cyclists who appreciate a minimalist yet
-                  high-performance ride. Crafted with a Tern Verge hydroformed aluminum frame, this bike combines
-                  durability and style, with smooth TIG welding and an innovative OCL+ joint featuring three patented
-                  technologies. This construction ensures strength and a sleek, modern look that suits any cityscape.
+                  The FELT Fixie Bike is the perfect choice for urban cyclists
+                  who appreciate a minimalist yet high-performance ride. Crafted
+                  with a Tern Verge hydroformed aluminum frame, this bike
+                  combines durability and style, with smooth TIG welding and an
+                  innovative OCL+ joint featuring three patented technologies.
+                  This construction ensures strength and a sleek, modern look
+                  that suits any cityscape.
                 </p>
                 <p>
-                  Equipped with a single-speed lever, the FELT Fixie Bike offers an intuitive and low-maintenance riding
-                  experience, ideal for the straightforward simplicity of fixed-gear cycling. The platform pedals
-                  provide exceptional grip, giving riders confidence and comfort with every pedal stroke. Dual-pivot
-                  caliper brakes ensure reliable stopping power, adding an extra layer of safety for city rides.
+                  Equipped with a single-speed lever, the FELT Fixie Bike offers
+                  an intuitive and low-maintenance riding experience, ideal for
+                  the straightforward simplicity of fixed-gear cycling. The
+                  platform pedals provide exceptional grip, giving riders
+                  confidence and comfort with every pedal stroke. Dual-pivot
+                  caliper brakes ensure reliable stopping power, adding an extra
+                  layer of safety for city rides.
                 </p>
               </div>
             )}
@@ -267,7 +330,8 @@ function Detail() {
                       </td>
                       <td className="py-3">
                         <h4 className="text-slate-500">
-                          Tern Verge, hydroformed aluminum w/ smooth TIG welding, OCL+ joint, 3 patented technologies
+                          Tern Verge, hydroformed aluminum w/ smooth TIG
+                          welding, OCL+ joint, 3 patented technologies
                         </h4>
                       </td>
                     </tr>
@@ -284,7 +348,9 @@ function Detail() {
                         <h4 className="font-medium text-slate-700">Pedal</h4>
                       </td>
                       <td className="py-3">
-                        <h4 className="text-slate-500">Platform pedals with grip</h4>
+                        <h4 className="text-slate-500">
+                          Platform pedals with grip
+                        </h4>
                       </td>
                     </tr>
                     <tr>
@@ -292,7 +358,9 @@ function Detail() {
                         <h4 className="font-medium text-slate-700">Brake</h4>
                       </td>
                       <td className="py-3">
-                        <h4 className="text-slate-500">Dual-pivot caliper brakes</h4>
+                        <h4 className="text-slate-500">
+                          Dual-pivot caliper brakes
+                        </h4>
                       </td>
                     </tr>
                     <tr>
@@ -313,7 +381,9 @@ function Detail() {
                     </tr>
                     <tr>
                       <td className="py-3 w-1/3 align-top">
-                        <h4 className="font-medium text-slate-700">Wheel Size</h4>
+                        <h4 className="font-medium text-slate-700">
+                          Wheel Size
+                        </h4>
                       </td>
                       <td className="py-3">
                         <h4 className="text-slate-500">700c</h4>
@@ -345,12 +415,15 @@ function Detail() {
                   id={1}
                   account={{
                     name: "Nurul Ismawati",
-                    picture: "https://utfs.io/f/sIzmAMtbfJsZEG2mlWuq8oHJAVax9Whg37P0slGNSz5wd6X1",
+                    picture:
+                      "https://utfs.io/f/sIzmAMtbfJsZEG2mlWuq8oHJAVax9Whg37P0slGNSz5wd6X1",
                   }}
                   rating={5}
                   date={new Date("2024-10-28")}
                   primary={false}
-                  comment={"Produk sangat bagus, build quality sangat kokoh, sangat recomended"}
+                  comment={
+                    "Produk sangat bagus, build quality sangat kokoh, sangat recomended"
+                  }
                   like={1}
                   dislike={0}
                 />
@@ -358,7 +431,8 @@ function Detail() {
                   id={1}
                   account={{
                     name: "Salim Sulaiman",
-                    picture: "https://utfs.io/f/sIzmAMtbfJsZ4iGOGglU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
+                    picture:
+                      "https://utfs.io/f/sIzmAMtbfJsZ4iGOGglU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
                   }}
                   rating={3}
                   date={new Date("2024-10-27")}
@@ -371,7 +445,8 @@ function Detail() {
                   id={2}
                   account={{
                     name: "Samy Sulaiman",
-                    picture: "https://utfs.io/f/sIzmAMtbfJsZ4RSPBylU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
+                    picture:
+                      "https://utfs.io/f/sIzmAMtbfJsZ4RSPBylU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
                   }}
                   rating={4}
                   date={new Date("2024-10-04")}
@@ -391,7 +466,9 @@ function Detail() {
                   <FaStar key={i} className={`text-sunflower-500`} />
                 ))}
               </div>
-              <h2 className="text-[24px] md:text-[28px] text-slate-600 font-bold">4.8</h2>
+              <h2 className="text-[24px] md:text-[28px] text-slate-600 font-bold">
+                4.8
+              </h2>
             </div>
             <div className="w-fit rounded-full h-[2px] bg-zumthor-100 mt-5 mb-5"></div>
             <div className="w-full">

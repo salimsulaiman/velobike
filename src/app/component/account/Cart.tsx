@@ -7,9 +7,32 @@ function Cart() {
   // const steps = [0, 1, 2];
   const [currentStep] = useState(0);
   const [inputValue, setInputValue] = useState("");
+  const [redeem, setRedeem] = useState(false);
+
+  const cartItems = [
+    {
+      name: "FELT Bike",
+      type: "Fixie Bike",
+      variant: "Cyan",
+      price: 6750000,
+      image: "/assets/product/FELT-fixie.png",
+    },
+    {
+      name: "RBEA Road Bike",
+      type: "Road Bike",
+      variant: "Red",
+      price: 8500000,
+      image: "/assets/product/RBEA-road.png",
+    },
+  ];
 
   const handleClear = () => {
     setInputValue("");
+  };
+
+  const handleRedeem = () => {
+    setRedeem(true);
+    console.log("Coupons redeemed!"); // Debugging
   };
   return (
     <>
@@ -114,8 +137,17 @@ function Cart() {
           </div>
           <hr className="mt-4" />
           <div className="w-full">
-            <CartItems />
-            <CartItems />
+            {cartItems.map((items, index) => {
+              return (
+                <CartItems
+                  name={items?.name}
+                  type={items?.type}
+                  variant={items?.variant}
+                  price={items?.price}
+                  image={items?.image}
+                />
+              );
+            })}
           </div>
           <div className="w-full flex gap-8 mt-8">
             <div className="w-1/2">
@@ -146,6 +178,14 @@ function Cart() {
                   </button>
                 )}
               </div>
+              <div className="w-full flex mt-2 justify-end">
+                <button
+                  onClick={handleRedeem}
+                  className="text-xs text-slate-500 hover:text-green-800"
+                >
+                  Redeem
+                </button>
+              </div>
             </div>
             <div className="w-1/2">
               <h4 className="text-slate-800 font-medium mb-[10px]">
@@ -162,10 +202,12 @@ function Cart() {
                     <h5 className="text-bombay-400">1 x FELT Fixie</h5>
                     <h5 className="text-slate-800 font-medium">6.750.000</h5>
                   </li>
-                  <li className="text-xs text-slate-800 w-full flex justify-between my-2">
-                    <h5 className="text-bombay-400">Coupon Discount</h5>
-                    <h5 className="text-green-800 font-medium">-200.000</h5>
-                  </li>
+                  {redeem && (
+                    <li className="text-xs text-slate-800 w-full flex justify-between my-2">
+                      <h5 className="text-bombay-400">Coupon Discount</h5>
+                      <h5 className="text-green-800 font-medium">-200.000</h5>
+                    </li>
+                  )}
                 </ul>
                 <hr className="my-4" />
                 <div className="flex items-center justify-between text-slate-800 font-medium">
@@ -173,7 +215,10 @@ function Cart() {
                   <h4>17.300.000</h4>
                 </div>
               </div>
-              <button className="w-full rounded-full bg-curious-blue-600 hover:bg-curious-blue-700 text-white mt-4 text-sm py-[10px]">
+              <button
+                type="button"
+                className="w-full rounded-full bg-curious-blue-600 hover:bg-curious-blue-700 text-white mt-4 text-sm py-[10px]"
+              >
                 Order Now
               </button>
             </div>
