@@ -18,8 +18,10 @@ const config: Config = {
         "curious-blue-700": "#016ca3",
         "porcelain-100": "#F1F3F2",
         "alto-200": "#D9D9D9",
+        "alto-100": "#D7D7D7",
         "tuatara-900": "#3A3A3A",
         "alabaster-50": "#FAFAFA",
+        "alabaster-100": "#F9F9F9",
         "boulder-500": "#767676",
         "big-stone-950": "#1E293B",
         "sunflower-500": "#E8D212",
@@ -49,7 +51,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+    require("tailwind-scrollbar")({ nocompatible: true }),
+  ],
   daisyui: {
     themes: ["light", "dark"],
   },

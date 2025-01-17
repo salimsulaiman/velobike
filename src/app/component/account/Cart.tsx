@@ -1,11 +1,20 @@
 import React, { useState } from "react";
+import { FaTrash } from "react-icons/fa";
+import CartItems from "../CartItems";
+import { MdDiscount } from "react-icons/md";
+import { RxCross2 } from "react-icons/rx";
 
 function Cart() {
   // const steps = [0, 1, 2];
   const [currentStep] = useState(0);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleClear = () => {
+    setInputValue("");
+  };
   return (
     <>
-      <div className="w-full px-[21px] py-[40px]">
+      <div className="w-full px-[21px] py-[40px] h-full overflow-auto scrollbar">
         <h2 className="text-2xl font-medium text-big-stone-950 mb-3">Cart</h2>
         <div className="w-6/12 mx-auto relative">
           <div className="h-[1px] bg-bombay-400 w-11/12 absolute top-3"></div>
@@ -105,6 +114,71 @@ function Cart() {
             </button>
           </div>
           <hr className="mt-4" />
+          <div className="w-full">
+            <CartItems />
+            <CartItems />
+          </div>
+          <div className="w-full flex gap-8 mt-8">
+            <div className="w-1/2">
+              <h4 className="text-slate-800 font-medium mb-[10px]">Coupons</h4>
+              <div className="flex justify-end items-center gap-2 relative w-full rounded-[8px] border border-alto-100 p-[14px] text-sm group group-focus:border-green-500">
+                <label
+                  htmlFor="coupons"
+                  className="flex gap-2 text-bombay-400 items-center absolute top-1/2 -translate-y-1/2 left-[14px] cursor-text w-full"
+                >
+                  <MdDiscount />
+                  <h5 className="text-sm">Coupons</h5>
+                </label>
+                <input
+                  type="text"
+                  className="max-w-1/2 text-green-700 focus:outline-none text-right uppercase"
+                  maxLength={10}
+                  id="coupons"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                />
+                {inputValue && (
+                  <button
+                    type="button"
+                    onClick={handleClear}
+                    className="text-gray-500 hover:text-gray-700"
+                  >
+                    <RxCross2 />
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="w-1/2">
+              <h4 className="text-slate-800 font-medium mb-[10px]">
+                Price Details
+              </h4>
+              <div className="w-full p-4 bg-alabaster-100 rounded-[8px]">
+                <ul className="w-full">
+                  <li className="text-xs text-slate-800">3 Items</li>
+                  <li className="text-xs text-slate-800 w-full flex justify-between my-2">
+                    <h5 className="text-bombay-400">1 x FELT Fixie</h5>
+                    <h5 className="text-slate-800 font-medium">6.750.000</h5>
+                  </li>
+                  <li className="text-xs text-slate-800 w-full flex justify-between my-2">
+                    <h5 className="text-bombay-400">1 x FELT Fixie</h5>
+                    <h5 className="text-slate-800 font-medium">6.750.000</h5>
+                  </li>
+                  <li className="text-xs text-slate-800 w-full flex justify-between my-2">
+                    <h5 className="text-bombay-400">Coupon Discount</h5>
+                    <h5 className="text-green-800 font-medium">-200.000</h5>
+                  </li>
+                </ul>
+                <hr className="my-4" />
+                <div className="flex items-center justify-between text-slate-800 font-medium">
+                  <h4>Total Amount</h4>
+                  <h4>17.300.000</h4>
+                </div>
+              </div>
+              <button className="w-full rounded-full bg-curious-blue-600 hover:bg-curious-blue-700 text-white mt-4 text-sm py-[10px]">
+                Order Now
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

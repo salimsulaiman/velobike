@@ -57,19 +57,27 @@ function AccountPage() {
                   )}
                 </div>
                 <div className="flex flex-col">
-                  <div className="text-base text-big-stone-950 line-clamp-1">{data?.name}</div>
-                  <div className="text-[10px] text-slate-500 line-clamp-1">{data?.email}</div>
+                  <div className="text-base text-big-stone-950 line-clamp-1">
+                    {data?.name}
+                  </div>
+                  <div className="text-[10px] text-slate-500 line-clamp-1">
+                    {data?.email}
+                  </div>
                 </div>
               </div>
               {/* menu */}
               <ul className="mt-[29px] w-full">
-                <li className="text-sm text-slate-500 px-[7px] block mb-[10px]">General</li>
+                <li className="text-sm text-slate-500 px-[7px] block mb-[10px]">
+                  General
+                </li>
                 {menuItems.map((item) => (
                   <li
                     key={item.id}
                     onClick={() => setMenu(item.id)}
                     className={`text-base py-[3px] my-1 px-[7px] flex gap-[12px] items-center cursor-pointer rounded-[9px] ${
-                      menu === item.id ? "text-white bg-curious-blue-600" : "text-slate-700 hover:bg-slate-200"
+                      menu === item.id
+                        ? "text-white bg-curious-blue-600"
+                        : "text-slate-700 hover:bg-slate-200"
                     }`}
                   >
                     <span>{item.icon}</span>
