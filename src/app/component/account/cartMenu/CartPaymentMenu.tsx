@@ -1,6 +1,6 @@
 import React from "react";
 
-function CartPaymentMenu() {
+function cartPaymentMenu() {
   return (
     <div className="w-full">
       <div className="w-full mt-9">
@@ -13,4 +13,4 @@ function CartPaymentMenu() {
   );
 }
 
-export default CartPaymentMenu;
+export default cartPaymentMenu;

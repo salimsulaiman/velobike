@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import CartItems from "../CartItems";
-import { MdDiscount } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import CartMenu from "./cartMenu/CartMenu";
 import CartAddressMenu from "./cartMenu/CartAddressMenu";
-import CartPaymentMenu from "./cartMenu/cartPaymentMenu";
 
 function Cart() {
   const steps = [0, 1, 2];
