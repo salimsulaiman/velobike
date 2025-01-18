@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import CartMenu from "./cartMenu/CartMenu";
 import CartAddressMenu from "./cartMenu/CartAddressMenu";
+import PaymentMenu from "./cartMenu/PaymentMenu";
 
 function Cart() {
   const steps = [0, 1, 2];
@@ -153,7 +154,7 @@ function Cart() {
                 setCurrentStep={setCurrentStep}
               />
             )}
-            {currentStep == 2 && <CartPaymentMenu />}
+            {currentStep == 2 && <PaymentMenu />}
           </div>
         )}
       </div>
