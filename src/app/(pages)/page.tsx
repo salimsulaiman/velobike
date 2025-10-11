@@ -22,8 +22,8 @@ function Home() {
   const carouselItems = [
     {
       id: 1,
-      name: "Nurul Ismawati",
-      image: "https://utfs.io/f/sIzmAMtbfJsZEG2mlWuq8oHJAVax9Whg37P0slGNSz5wd6X1",
+      name: "Syafiq Sulaiman",
+      image: "https://instagram.fbdo3-1.fna.fbcdn.net/v/t51.2885-19/441764210_3260701674238778_3671379109484483953_n.jpg?efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45OTAuYzIifQ&_nc_ht=instagram.fbdo3-1.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2QE7HDT02ZiElty3GolieOs0ZIP2KfZD1U1pWrG4zamoGqUp8gBTuxqxrks22ihQPU8&_nc_ohc=JblnjWE3utkQ7kNvwGw9ttE&_nc_gid=RhDtEHmZ2c_1jOzvZxppng&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afe4JW6Ss_r6gkKffOqn5m2NtsYOQI4HG7Fig4eAtvKDaw&oe=68EFE692&_nc_sid=7a9f4b",
       rating: 5,
       review: "Produk sangat bagus, build quality sangat kokoh. sangat recomended",
     },
