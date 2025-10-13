@@ -414,22 +414,6 @@ function Detail() {
                 <CommentCard
                   id={1}
                   account={{
-                    name: "Nurul Ismawati",
-                    picture:
-                      "https://utfs.io/f/sIzmAMtbfJsZEG2mlWuq8oHJAVax9Whg37P0slGNSz5wd6X1",
-                  }}
-                  rating={5}
-                  date={new Date("2024-10-28")}
-                  primary={false}
-                  comment={
-                    "Produk sangat bagus, build quality sangat kokoh, sangat recomended"
-                  }
-                  like={1}
-                  dislike={0}
-                />
-                <CommentCard
-                  id={1}
-                  account={{
                     name: "Salim Sulaiman",
                     picture:
                       "https://utfs.io/f/sIzmAMtbfJsZ4iGOGglU8tTMPbXAGuRWZzQcVEdiayrC3lHk",
