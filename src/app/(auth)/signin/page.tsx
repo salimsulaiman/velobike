@@ -15,13 +15,6 @@ function Signin() {
       password: "salim",
       picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Salim",
     },
-    {
-      name: "Nurul Ismawati",
-      username: "nurulisma",
-      email: "nurul@gmail.com",
-      password: "nurul",
-      picture: "https://api.dicebear.com/9.x/thumbs/svg?seed=Nurul",
-    },
   ];
 
   const [username, setUsername] = useState<string>("");
